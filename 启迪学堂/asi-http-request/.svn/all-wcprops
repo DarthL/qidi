@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request
+END
+ASIHTTPRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIHTTPRequest.m
+END
+ASICacheDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASICacheDelegate.h
+END
+ASINetworkQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASINetworkQueue.h
+END
+ASIDataDecompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIDataDecompressor.h
+END
+ASIAuthenticationDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIAuthenticationDialog.h
+END
+ASIProgressDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIProgressDelegate.h
+END
+ASIDownloadCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIDownloadCache.m
+END
+ASINetworkQueue.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASINetworkQueue.m
+END
+ASIDataDecompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIDataDecompressor.m
+END
+ASIAuthenticationDialog.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIAuthenticationDialog.m
+END
+ASIFormDataRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIFormDataRequest.h
+END
+ASIInputStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIInputStream.h
+END
+ASIFormDataRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIFormDataRequest.m
+END
+ASIHTTPRequestConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIHTTPRequestConfig.h
+END
+ASIInputStream.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIInputStream.m
+END
+ASIHTTPRequestDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIHTTPRequestDelegate.h
+END
+ASIDataCompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIDataCompressor.h
+END
+ASIHTTPRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIHTTPRequest.h
+END
+ASIDownloadCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIDownloadCache.h
+END
+ASIDataCompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/jzapp/!svn/ver/662/IOS/hjz5.0/hjz/Resource/asi-http-request/ASIDataCompressor.m
+END
