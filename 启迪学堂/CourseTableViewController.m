@@ -10,6 +10,7 @@
 #import "UIImageView+WebCache.h"
 #import "AppDelegate.h"
 #import "playerlistViewController.h"
+#import "ShowPlayerViewController.h"
 @interface CourseTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
 
@@ -40,9 +41,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
-    playerlistViewController*playerview=[[playerlistViewController alloc]init];
-    playerview.hidesBottomBarWhenPushed=YES;
-    [delegate.coursenavigation pushViewController:playerview animated:YES];
+//    playerlistViewController*playerview=[[playerlistViewController alloc]init];
+//    playerview.hidesBottomBarWhenPushed=YES;
+//    [delegate.coursenavigation pushViewController:playerview animated:YES];
+    ShowPlayerViewController *showPlayerVC = [[ShowPlayerViewController alloc] init];
+    showPlayerVC.hidesBottomBarWhenPushed = YES;
+    [delegate.coursenavigation pushViewController:showPlayerVC animated:YES];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
