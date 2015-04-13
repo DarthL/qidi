@@ -6,19 +6,27 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>41F3DCAB-CA2D-4D50-AA25-8F7613BEEF04</string>
+	<key>IDESourceControlProjectName</key>
+	<string>启迪学堂</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>2B96C207DF54A6951403056BDFFCCED0D8469D6E</key>
+		<string>https://github.com/pushi/qidi-1.git</string>
 		<key>326cc09a-e259-9f42-8c21-364dcc287ccd++7059</key>
 		<string>https://121.40.133.221:4431/svn/jzapp/IOS/hjz3.0/hjz/Resource/MJPhotoBrowser</string>
 		<key>326cc09a-e259-9f42-8c21-364dcc287ccd++8658</key>
 		<string>https://121.40.133.221:4431/svn/jzapp/IOS/hjz3.0/hjz/Resource/MBProgressHUD</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>启迪学堂.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>2B96C207DF54A6951403056BDFFCCED0D8469D6E</key>
+		<string>../..</string>
 		<key>326cc09a-e259-9f42-8c21-364dcc287ccd++7059</key>
-		<string>MJPhotoBrowser/</string>
+		<string>../..%E5%90%AF%E8%BF%AA%E5%AD%A6%E5%A0%82/MJPhotoBrowser/</string>
 		<key>326cc09a-e259-9f42-8c21-364dcc287ccd++8658</key>
-		<string>MBProgressHUD/</string>
+		<string>../..%E5%90%AF%E8%BF%AA%E5%AD%A6%E5%A0%82/MBProgressHUD/</string>
 	</dict>
 	<key>IDESourceControlProjectRepositoryRootDictionary</key>
 	<dict>
@@ -28,11 +36,11 @@
 		<string>https://121.40.133.221:4431/svn/jzapp</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://121.40.133.221:4431/svn/jzapp/IOS/hjz3.0/hjz/Resource/MJPhotoBrowser</string>
+	<string>https://github.com/pushi/qidi-1.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>326cc09a-e259-9f42-8c21-364dcc287ccd++7059</string>
+	<string>2B96C207DF54A6951403056BDFFCCED0D8469D6E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -50,6 +58,14 @@
 			<string>326cc09a-e259-9f42-8c21-364dcc287ccd++7059</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MJPhotoBrowser</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2B96C207DF54A6951403056BDFFCCED0D8469D6E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>qidi-1</string>
 		</dict>
 	</array>
 </dict>
