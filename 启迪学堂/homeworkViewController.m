@@ -38,6 +38,7 @@
     [segmentedControl setTitleTextAttributes:unselectedTextAttributes forState:UIControlStateNormal];
     [segmentedControl addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];  //添加委托方法
     [self.view addSubview:segmentedControl];
+    
     viewscroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, segmentedControl.frame.size.height, WIDTH, HEIGHT-segmentedControl.frame.size.height-64)];
     viewscroll.backgroundColor=[UIColor clearColor];
     viewscroll.scrollEnabled=false;

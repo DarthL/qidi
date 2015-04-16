@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814FE7161ADF4F9000E8FD43 /* ReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7151ADF4F9000E8FD43 /* ReplyViewController.m */; };
+		814FE7191ADF513C00E8FD43 /* faviourateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7181ADF513C00E8FD43 /* faviourateViewController.m */; };
+		814FE71F1ADF680200E8FD43 /* favSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE71E1ADF680200E8FD43 /* favSeriesViewController.m */; };
+		814FE7221ADF830100E8FD43 /* SeriesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7211ADF830100E8FD43 /* SeriesObject.m */; };
+		814FE7251ADF840C00E8FD43 /* MicroLesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7241ADF840C00E8FD43 /* MicroLesson.m */; };
+		814FE7281ADF852900E8FD43 /* favMicroLessonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */; };
+		814FE72B1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE72A1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m */; };
 		A8825EE61ADA4B5B00FA1C48 /* CommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EDF1ADA4B5B00FA1C48 /* CommentObject.m */; };
 		A8825EE71ADA4B5B00FA1C48 /* DiscussDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EE11ADA4B5B00FA1C48 /* DiscussDetailViewController.m */; };
 		A8825EE81ADA4B5B00FA1C48 /* DiscussionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EE31ADA4B5B00FA1C48 /* DiscussionViewController.m */; };
@@ -381,6 +388,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		814FE7141ADF4F9000E8FD43 /* ReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyViewController.h; sourceTree = "<group>"; };
+		814FE7151ADF4F9000E8FD43 /* ReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyViewController.m; sourceTree = "<group>"; };
+		814FE7171ADF513C00E8FD43 /* faviourateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = faviourateViewController.h; sourceTree = "<group>"; };
+		814FE7181ADF513C00E8FD43 /* faviourateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = faviourateViewController.m; sourceTree = "<group>"; };
+		814FE71D1ADF680200E8FD43 /* favSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favSeriesViewController.h; sourceTree = "<group>"; };
+		814FE71E1ADF680200E8FD43 /* favSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favSeriesViewController.m; sourceTree = "<group>"; };
+		814FE7201ADF830100E8FD43 /* SeriesObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesObject.h; sourceTree = "<group>"; };
+		814FE7211ADF830100E8FD43 /* SeriesObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesObject.m; sourceTree = "<group>"; };
+		814FE7231ADF840C00E8FD43 /* MicroLesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroLesson.h; sourceTree = "<group>"; };
+		814FE7241ADF840C00E8FD43 /* MicroLesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroLesson.m; sourceTree = "<group>"; };
+		814FE7261ADF852900E8FD43 /* favMicroLessonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favMicroLessonsViewController.h; sourceTree = "<group>"; };
+		814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favMicroLessonsViewController.m; sourceTree = "<group>"; };
+		814FE7291ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroLessonSeriesViewController.h; sourceTree = "<group>"; };
+		814FE72A1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroLessonSeriesViewController.m; sourceTree = "<group>"; };
 		A8825EDE1ADA4B5B00FA1C48 /* CommentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentObject.h; sourceTree = "<group>"; };
 		A8825EDF1ADA4B5B00FA1C48 /* CommentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentObject.m; sourceTree = "<group>"; };
 		A8825EE01ADA4B5B00FA1C48 /* DiscussDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussDetailViewController.h; sourceTree = "<group>"; };
@@ -2128,12 +2149,14 @@
 			children = (
 				A8825EDE1ADA4B5B00FA1C48 /* CommentObject.h */,
 				A8825EDF1ADA4B5B00FA1C48 /* CommentObject.m */,
-				A8825EE01ADA4B5B00FA1C48 /* DiscussDetailViewController.h */,
-				A8825EE11ADA4B5B00FA1C48 /* DiscussDetailViewController.m */,
 				A8825EE21ADA4B5B00FA1C48 /* DiscussionViewController.h */,
 				A8825EE31ADA4B5B00FA1C48 /* DiscussionViewController.m */,
+				A8825EE01ADA4B5B00FA1C48 /* DiscussDetailViewController.h */,
+				A8825EE11ADA4B5B00FA1C48 /* DiscussDetailViewController.m */,
 				A8825EE41ADA4B5B00FA1C48 /* NewTopicViewController.h */,
 				A8825EE51ADA4B5B00FA1C48 /* NewTopicViewController.m */,
+				814FE7141ADF4F9000E8FD43 /* ReplyViewController.h */,
+				814FE7151ADF4F9000E8FD43 /* ReplyViewController.m */,
 			);
 			name = discussion;
 			sourceTree = "<group>";
@@ -2167,6 +2190,18 @@
 				C647D0EB1AD7AC710090B987 /* GroupDetailViewController.m */,
 				C607ABAA1AD90FFB005C172E /* ClassHomeViewController.h */,
 				C607ABAB1AD90FFB005C172E /* ClassHomeViewController.m */,
+				814FE7171ADF513C00E8FD43 /* faviourateViewController.h */,
+				814FE7181ADF513C00E8FD43 /* faviourateViewController.m */,
+				814FE71D1ADF680200E8FD43 /* favSeriesViewController.h */,
+				814FE71E1ADF680200E8FD43 /* favSeriesViewController.m */,
+				814FE7261ADF852900E8FD43 /* favMicroLessonsViewController.h */,
+				814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */,
+				814FE7291ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.h */,
+				814FE72A1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m */,
+				814FE7201ADF830100E8FD43 /* SeriesObject.h */,
+				814FE7211ADF830100E8FD43 /* SeriesObject.m */,
+				814FE7231ADF840C00E8FD43 /* MicroLesson.h */,
+				814FE7241ADF840C00E8FD43 /* MicroLesson.m */,
 			);
 			name = mine;
 			sourceTree = "<group>";
@@ -2741,12 +2776,14 @@
 				C663A61A1AD3C3D100E11627 /* SDWebImageManager.m in Sources */,
 				C607ACE11AD926CD005C172E /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				C607AD041AD92798005C172E /* NSDate+Category.m in Sources */,
+				814FE7161ADF4F9000E8FD43 /* ReplyViewController.m in Sources */,
 				C663A59B1AD3A96F00E11627 /* POPBasicAnimation.mm in Sources */,
 				C6554A0B1AD56890003D76AC /* writeNoteViewController.m in Sources */,
 				C647D0E31AD7A6070090B987 /* AboutUsViewController.m in Sources */,
 				C607ACCB1AD926CD005C172E /* MWPhoto.m in Sources */,
 				C6D454361ACE8D3C0013A248 /* AppDelegate.m in Sources */,
 				C607ABAC1AD90FFB005C172E /* ClassHomeViewController.m in Sources */,
+				814FE7251ADF840C00E8FD43 /* MicroLesson.m in Sources */,
 				C6D454391ACE8D3C0013A248 /* ____.xcdatamodeld in Sources */,
 				C647D0E91AD7A9030090B987 /* GroupTableViewController.m in Sources */,
 				C663A59F1AD3A96F00E11627 /* POPGeometry.mm in Sources */,
@@ -2770,6 +2807,7 @@
 				C607ACD01AD926CD005C172E /* DACircularProgressView.m in Sources */,
 				C607ACCD1AD926CD005C172E /* MWTapDetectingImageView.m in Sources */,
 				C663A6241AD3CA2E00E11627 /* CourseTableViewController.m in Sources */,
+				814FE7281ADF852900E8FD43 /* favMicroLessonsViewController.m in Sources */,
 				C607AC401AD9256C005C172E /* EMChatBaseBubbleView.m in Sources */,
 				C663A59E1AD3A96F00E11627 /* POPDecayAnimation.mm in Sources */,
 				C607ACE51AD926CD005C172E /* PSTCollectionViewData.m in Sources */,
@@ -2808,6 +2846,7 @@
 				C607ACEC1AD926CD005C172E /* PSTGridLayoutRow.m in Sources */,
 				C663A5991AD3A96F00E11627 /* POPAnimationTracer.mm in Sources */,
 				C663A5C31AD3AD0700E11627 /* MineViewController.m in Sources */,
+				814FE71F1ADF680200E8FD43 /* favSeriesViewController.m in Sources */,
 				C647D0DD1AD779830090B987 /* CallbackViewController.m in Sources */,
 				A8825EE71ADA4B5B00FA1C48 /* DiscussDetailViewController.m in Sources */,
 				C647D0DA1AD777370090B987 /* NoticeViewController.m in Sources */,
@@ -2820,6 +2859,7 @@
 				C607ACF41AD926CD005C172E /* TTGlobalUICommon.m in Sources */,
 				C607AC3F1AD9256C005C172E /* EMChatAudioBubbleView.m in Sources */,
 				C663A60D1AD3C3D100E11627 /* MJPhotoBrowser.m in Sources */,
+				814FE7221ADF830100E8FD43 /* SeriesObject.m in Sources */,
 				C607ACEA1AD926CD005C172E /* PSTGridLayoutInfo.m in Sources */,
 				C663A6191AD3C3D100E11627 /* SDWebImageManager+MJ.m in Sources */,
 				C607AD241AD92816005C172E /* EMChooseViewController.m in Sources */,
@@ -2828,6 +2868,7 @@
 				C663A61D1AD3C3D100E11627 /* UIImage+GIF.m in Sources */,
 				C607ACD41AD926CD005C172E /* EMSDWebImageDownloader.m in Sources */,
 				C647D0CE1AD76D870090B987 /* homeworkViewController.m in Sources */,
+				814FE7191ADF513C00E8FD43 /* faviourateViewController.m in Sources */,
 				C663A6141AD3C3D100E11627 /* SDImageCache.m in Sources */,
 				C663A59C1AD3A96F00E11627 /* POPCGUtils.mm in Sources */,
 				C663A60B1AD3C3D100E11627 /* MJPhoto.m in Sources */,
@@ -2865,6 +2906,7 @@
 				C6554A081AD56830003D76AC /* writeCommentViewController.m in Sources */,
 				C6554A021AD55513003D76AC /* CourseListViewController.m in Sources */,
 				C663A5981AD3A96F00E11627 /* POPAnimationRuntime.mm in Sources */,
+				814FE72B1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m in Sources */,
 				A8825EE91ADA4B5B00FA1C48 /* NewTopicViewController.m in Sources */,
 				C663A6121AD3C3D100E11627 /* MKAnnotationView+WebCache.m in Sources */,
 				C6D454331ACE8D3C0013A248 /* main.m in Sources */,

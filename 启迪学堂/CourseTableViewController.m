@@ -59,7 +59,7 @@
      return 120;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString* titleCellIdentifier = [NSString stringWithFormat:@"cell:%d_%d",indexPath.section,indexPath.row];
+    NSString* titleCellIdentifier = [NSString stringWithFormat:@"lwcell:%d_%d",indexPath.section,indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:titleCellIdentifier];
     if (cell == nil) {

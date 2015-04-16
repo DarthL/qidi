@@ -113,7 +113,7 @@
     _isScrollToBottom = YES;
     
     [self setupBarButtonItem];
-    [self.view addSubview:self.tableView];
+    [self.view addSubview:self.tableView]; 
     [self.tableView addSubview:self.slimeView];
     [self.view addSubview:self.chatToolBar];
     

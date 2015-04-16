@@ -9,7 +9,7 @@
 #import "DiscussDetailViewController.h"
 #import "CommentObject.h"
 #import "HandleTools.h"
-#import "NewTopicViewController.h"
+#import "ReplyViewController.h"
 #define FirstCellHeight 260
 
 static NSString *CELLID = @"discussCommentCell";
@@ -33,7 +33,7 @@ static NSString *CELLID = @"discussCommentCell";
     
     UIButton *topBtn;
     
-    NewTopicViewController *newTopicVC;
+    ReplyViewController *replyVC;
 
 }
 @end
@@ -162,7 +162,7 @@ static NSString *CELLID = @"discussCommentCell";
     topBtn = [[UIButton alloc] init];
     topBtn.frame = CGRectMake(WIDTH - 60, HEIGHT - 200, 40, 40);
     [topBtn setBackgroundColor:[UIColor blackColor]];
-    [topBtn addTarget:self action:@selector(toNewTopic) forControlEvents:UIControlEventTouchUpInside];
+    [topBtn addTarget:self action:@selector(toReply) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:topBtn];
     [self.view addSubview:topBtn];
     
@@ -194,10 +194,10 @@ static NSString *CELLID = @"discussCommentCell";
     
 }
 
-- (void)toNewTopic{
+- (void)toReply{
 
-    newTopicVC = [[NewTopicViewController alloc] init];
-    [self.navigationController pushViewController:newTopicVC animated:YES];
+    replyVC = [[ReplyViewController alloc] init];
+    [self.navigationController pushViewController:replyVC animated:YES];
 }
 
 -(void)showInFlashBtnClicked{

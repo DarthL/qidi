@@ -15,6 +15,7 @@
 #import "CallbackViewController.h"
 #import "SettingViewController.h"
 #import "GroupsViewController.h"
+#import "faviourateViewController.h"
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -82,13 +83,22 @@
         case 1:
         {
             AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
+            faviourateViewController *favVC = [[faviourateViewController alloc]init];
+            favVC.hidesBottomBarWhenPushed=YES;
+            [delegate.minenavigation pushViewController:favVC animated:YES];
+            
+        }
+            break;
+        case 2:
+        {
+            AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
             littleCourseViewController*lcourseview=[[littleCourseViewController alloc]init];
             lcourseview.hidesBottomBarWhenPushed=YES;
             [delegate.minenavigation pushViewController:lcourseview animated:YES];
 
         }
             break;
-        case 2:
+        case 3:
         {
             AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
             noteViewController*noteview=[[noteViewController alloc]init];
@@ -97,7 +107,7 @@
 
         }
             break;
-        case 3:
+        case 4:
         {
             AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
             GroupsViewController*view=[[GroupsViewController alloc]init];
@@ -106,7 +116,7 @@
 
         }
             break;
-        case 4:
+        case 5:
         {
             AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
             NoticeViewController*noteview=[[NoticeViewController alloc]init];
@@ -114,7 +124,7 @@
             [delegate.minenavigation pushViewController:noteview animated:YES];
         }
             break;
-        case 5:
+        case 6:
         {
             AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
             SettingViewController*view=[[SettingViewController alloc]init];
@@ -122,7 +132,7 @@
             [delegate.minenavigation pushViewController:view animated:YES];
         }
             break;
-        case 6:
+        case 7:
         {
             AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
             CallbackViewController*view=[[CallbackViewController alloc]init];
@@ -163,21 +173,24 @@
             cell.textLabel.text=@"作业";
             break;
         case 1:
-            cell.textLabel.text=@"微课";
+            cell.textLabel.text=@"收藏";
             break;
         case 2:
-            cell.textLabel.text=@"笔记";
+            cell.textLabel.text=@"微课";
             break;
         case 3:
-            cell.textLabel.text=@"班组";
+            cell.textLabel.text=@"笔记";
             break;
         case 4:
-            cell.textLabel.text=@"通知";
+            cell.textLabel.text=@"班组";
             break;
         case 5:
-            cell.textLabel.text=@"设置";
+            cell.textLabel.text=@"通知";
             break;
         case 6:
+            cell.textLabel.text=@"设置";
+            break;
+        case 7:
             cell.textLabel.text=@"意见反馈";
             break;
             
