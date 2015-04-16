@@ -18,4 +18,5 @@
 @property(nonatomic,assign) BOOL isLearned;
 @property(nonatomic,assign) BOOL isFaviourate;
 @property(nonatomic,strong) NSString *note;
+@property(nonatomic,strong) NSString *videoURL;
 @end
