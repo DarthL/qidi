@@ -9,12 +9,12 @@
 #import "favSeriesViewController.h"
 #import "UIImageView+WebCache.h"
 #import "AppDelegate.h"
-#import "MicroLessonSeriesViewController.h"
-#import "playerlistViewController.h"
+#import "SeriesDetailedViewController.h"
+#import "ShowPlayerViewController.h"
 @interface favSeriesViewController ()
 {
     NSMutableArray *favSeries;
-    MicroLessonSeriesViewController *mlSeriesVC;
+    SeriesDetailedViewController *seriesDetailVC;
 }
 @end
 
@@ -52,12 +52,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
-        playerlistViewController*playerview=[[playerlistViewController alloc]init];
-        playerview.hidesBottomBarWhenPushed=YES;
-        [delegate.coursenavigation pushViewController:playerview animated:YES];
-//    mlSeriesVC = [[MicroLessonSeriesViewController alloc] init];
-//    mlSeriesVC.hidesBottomBarWhenPushed = YES;
-//    [delegate.coursenavigation pushViewController:mlSeriesVC animated:YES];
+
+    seriesDetailVC = [[SeriesDetailedViewController alloc] init];
+    [delegate.minenavigation pushViewController:seriesDetailVC animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -76,10 +73,6 @@
     cell.contentView.backgroundColor=[UIColor whiteColor];
     CellChangeSelectedColor;
     UIImageView*imgview=[[UIImageView alloc]initWithFrame:CGRectMake(10,10 , 100, 100)];
-    //            imgview.backgroundColor=[UIColor grayColor];
-    //            [imgview setImage:[UIImage imageNamed:@"文章默认"]];
-    
-    
     NSString*strURL=@"http://img0.pconline.com.cn/pconline/1306/13/3340324_2.jpg";
     [imgview setImageWithURL:[NSURL URLWithString:strURL] placeholderImage:[UIImage imageNamed:@"tabicon"]];
     [cell.contentView addSubview:imgview];

@@ -8,6 +8,8 @@
 
 #import "favMicroLessonsViewController.h"
 #import "UIImageView+WebCache.h"
+#import "ShowPlayerViewController.h"
+#import "AppDelegate.h"
 @interface favMicroLessonsViewController ()
 {
     NSMutableArray *favLessons;
@@ -44,6 +46,12 @@
     
 }
 #pragma mark -Table DataSource
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    ShowPlayerViewController *showPlayerVC = [[ShowPlayerViewController alloc] init];
+    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    [delegate.minenavigation pushViewController:showPlayerVC animated:YES];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return  favLessons.count;
 }
@@ -74,7 +82,6 @@
     title.font=[UIFont systemFontOfSize:20];
     title.text=@"内部测试题";
     [cell.contentView addSubview:title];
-    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

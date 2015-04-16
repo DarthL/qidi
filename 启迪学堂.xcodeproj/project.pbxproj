@@ -13,7 +13,7 @@
 		814FE7221ADF830100E8FD43 /* SeriesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7211ADF830100E8FD43 /* SeriesObject.m */; };
 		814FE7251ADF840C00E8FD43 /* MicroLesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7241ADF840C00E8FD43 /* MicroLesson.m */; };
 		814FE7281ADF852900E8FD43 /* favMicroLessonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */; };
-		814FE72B1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE72A1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m */; };
+		814FE72B1ADF8AAA00E8FD43 /* SeriesDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE72A1ADF8AAA00E8FD43 /* SeriesDetailedViewController.m */; };
 		A8825EE61ADA4B5B00FA1C48 /* CommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EDF1ADA4B5B00FA1C48 /* CommentObject.m */; };
 		A8825EE71ADA4B5B00FA1C48 /* DiscussDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EE11ADA4B5B00FA1C48 /* DiscussDetailViewController.m */; };
 		A8825EE81ADA4B5B00FA1C48 /* DiscussionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EE31ADA4B5B00FA1C48 /* DiscussionViewController.m */; };
@@ -400,8 +400,8 @@
 		814FE7241ADF840C00E8FD43 /* MicroLesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroLesson.m; sourceTree = "<group>"; };
 		814FE7261ADF852900E8FD43 /* favMicroLessonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favMicroLessonsViewController.h; sourceTree = "<group>"; };
 		814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favMicroLessonsViewController.m; sourceTree = "<group>"; };
-		814FE7291ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroLessonSeriesViewController.h; sourceTree = "<group>"; };
-		814FE72A1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroLessonSeriesViewController.m; sourceTree = "<group>"; };
+		814FE7291ADF8AAA00E8FD43 /* SeriesDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesDetailedViewController.h; sourceTree = "<group>"; };
+		814FE72A1ADF8AAA00E8FD43 /* SeriesDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesDetailedViewController.m; sourceTree = "<group>"; };
 		A8825EDE1ADA4B5B00FA1C48 /* CommentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentObject.h; sourceTree = "<group>"; };
 		A8825EDF1ADA4B5B00FA1C48 /* CommentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentObject.m; sourceTree = "<group>"; };
 		A8825EE01ADA4B5B00FA1C48 /* DiscussDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussDetailViewController.h; sourceTree = "<group>"; };
@@ -1088,6 +1088,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		814FE72C1ADFA20400E8FD43 /* fav */ = {
+			isa = PBXGroup;
+			children = (
+				814FE7171ADF513C00E8FD43 /* faviourateViewController.h */,
+				814FE7181ADF513C00E8FD43 /* faviourateViewController.m */,
+				814FE71D1ADF680200E8FD43 /* favSeriesViewController.h */,
+				814FE71E1ADF680200E8FD43 /* favSeriesViewController.m */,
+				814FE7261ADF852900E8FD43 /* favMicroLessonsViewController.h */,
+				814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */,
+				814FE7291ADF8AAA00E8FD43 /* SeriesDetailedViewController.h */,
+				814FE72A1ADF8AAA00E8FD43 /* SeriesDetailedViewController.m */,
+				814FE7201ADF830100E8FD43 /* SeriesObject.h */,
+				814FE7211ADF830100E8FD43 /* SeriesObject.m */,
+				814FE7231ADF840C00E8FD43 /* MicroLesson.h */,
+				814FE7241ADF840C00E8FD43 /* MicroLesson.m */,
+			);
+			name = fav;
+			sourceTree = "<group>";
+		};
 		C607AC001AD9256C005C172E /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2190,18 +2209,7 @@
 				C647D0EB1AD7AC710090B987 /* GroupDetailViewController.m */,
 				C607ABAA1AD90FFB005C172E /* ClassHomeViewController.h */,
 				C607ABAB1AD90FFB005C172E /* ClassHomeViewController.m */,
-				814FE7171ADF513C00E8FD43 /* faviourateViewController.h */,
-				814FE7181ADF513C00E8FD43 /* faviourateViewController.m */,
-				814FE71D1ADF680200E8FD43 /* favSeriesViewController.h */,
-				814FE71E1ADF680200E8FD43 /* favSeriesViewController.m */,
-				814FE7261ADF852900E8FD43 /* favMicroLessonsViewController.h */,
-				814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */,
-				814FE7291ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.h */,
-				814FE72A1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m */,
-				814FE7201ADF830100E8FD43 /* SeriesObject.h */,
-				814FE7211ADF830100E8FD43 /* SeriesObject.m */,
-				814FE7231ADF840C00E8FD43 /* MicroLesson.h */,
-				814FE7241ADF840C00E8FD43 /* MicroLesson.m */,
+				814FE72C1ADFA20400E8FD43 /* fav */,
 			);
 			name = mine;
 			sourceTree = "<group>";
@@ -2906,7 +2914,7 @@
 				C6554A081AD56830003D76AC /* writeCommentViewController.m in Sources */,
 				C6554A021AD55513003D76AC /* CourseListViewController.m in Sources */,
 				C663A5981AD3A96F00E11627 /* POPAnimationRuntime.mm in Sources */,
-				814FE72B1ADF8AAA00E8FD43 /* MicroLessonSeriesViewController.m in Sources */,
+				814FE72B1ADF8AAA00E8FD43 /* SeriesDetailedViewController.m in Sources */,
 				A8825EE91ADA4B5B00FA1C48 /* NewTopicViewController.m in Sources */,
 				C663A6121AD3C3D100E11627 /* MKAnnotationView+WebCache.m in Sources */,
 				C6D454331ACE8D3C0013A248 /* main.m in Sources */,

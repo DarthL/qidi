@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SuperViewController.h"
-@interface favSeriesViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface favSeriesViewController : SuperViewController<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong) UITableView *tableView;
 
 @end

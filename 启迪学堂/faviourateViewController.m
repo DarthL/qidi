@@ -9,12 +9,14 @@
 #import "faviourateViewController.h"
 #import "favSeriesViewController.h"
 #import "favMicroLessonsViewController.h"
+#import "CourseTableViewController.h"
 @interface faviourateViewController ()
 {
     UISegmentedControl*segmentedControl;
     UIScrollView *viewscroll;
     favSeriesViewController *favSeriesVC;
     favMicroLessonsViewController *favMicroLessonsVC;
+    
 }
 @end
 
@@ -66,17 +68,31 @@
 
 }
 
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.leftbarbtn setTitle:@"后退" forState:UIControlStateNormal];
+    [self.leftbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [self.leftbarbtn addTarget:self action:@selector(toback) forControlEvents:UIControlEventTouchUpInside];
+    [super viewWillAppear:animated];
+    
+    
+}
+-(void)toback
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+}
 -(void)segmentAction:(UISegmentedControl *)seg{
     
     [viewscroll setContentOffset:CGPointMake((WIDTH)*seg.selectedSegmentIndex, 0) animated:YES];
     
 }
--(void)changepage
-{
-    
 
-    
-}
 
 @end

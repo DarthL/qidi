@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 蒲石. All rights reserved.
 //
 
-#import "MicroLessonSeriesViewController.h"
+#import "SeriesDetailedViewController.h"
 
-@interface MicroLessonSeriesViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface SeriesDetailedViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UISegmentedControl *segmentedControl;
     UIScrollView *viewscroll;
@@ -16,11 +16,12 @@
     UITableView *microLessonsListTable;
 }
 @end
-@implementation MicroLessonSeriesViewController
+@implementation SeriesDetailedViewController
 -(void)viewDidLoad{
     
 
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor grayColor];
     segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"基本信息",@"微课列表"]];
     segmentedControl.frame = CGRectMake(0, 0, WIDTH, 32);
     segmentedControl.selectedSegmentIndex = 0;
@@ -42,32 +43,59 @@
     viewscroll.backgroundColor=[UIColor clearColor];
     [self.view addSubview:viewscroll];
     
-    basicTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 0, WIDTH-20, viewscroll.frame.size.height-64) style:UITableViewStyleGrouped];
+    basicTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 0, WIDTH-30, viewscroll.frame.size.height-64) style:UITableViewStyleGrouped];
     basicTable.delegate = self;
     basicTable.dataSource = self;
+    basicTable.backgroundColor = [UIColor grayColor];
     [viewscroll addSubview:basicTable];
 
-    microLessonsListTable = [[UITableView alloc] initWithFrame:CGRectMake(10+WIDTH*2, 0, WIDTH-20, viewscroll.frame.size.height-64) style:UITableViewStyleGrouped];
+    microLessonsListTable = [[UITableView alloc] initWithFrame:CGRectMake(10+WIDTH, 0, WIDTH-30, viewscroll.frame.size.height-64) style:UITableViewStyleGrouped];
     microLessonsListTable.delegate = self;
     microLessonsListTable.dataSource = self;
     [viewscroll addSubview:microLessonsListTable];
 
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationtitle setText:@"物理微课系列"];
+    [self.leftbarbtn setTitle:@"后退" forState:UIControlStateNormal];
+    [self.leftbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [self.leftbarbtn addTarget:self action:@selector(toback) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.rightbarbtn setTitle:@"收藏" forState:UIControlStateNormal];
+    [self.rightbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [self.rightbarbtn addTarget:self action:@selector(toFav) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+}
+
+- (void)toFav{
+
+    
+}
+- (void)toback
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 -(void)segmentAction:(UISegmentedControl *)seg{
 
-    [viewscroll setContentOffset:CGPointMake(seg.selectedSegmentIndex * WIDTH, 0)];
+    [viewscroll setContentOffset:CGPointMake((WIDTH)*seg.selectedSegmentIndex, 0) animated:YES];
 }
 
 #pragma mark - Table DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == basicTable) {
-        return 1;
+        return 2;
     }
     else{
         
-        return 1;
+        return 5;
     }
     
 }
@@ -89,12 +117,13 @@
         
         if ([indexPath row] == 0) {
             UILabel *goalLabel = [[UILabel alloc] init];
-            goalLabel.frame = CGRectMake(10, 10, 40, 20);
+            goalLabel.frame = CGRectMake(10, 10, 100, 20);
             goalLabel.text = @"系列目标";
+            [goalLabel sizeToFit];
             [cell.contentView addSubview:goalLabel];
             
             UITextView *goalDetailTextView = [[UITextView alloc] init];
-            goalDetailTextView.frame = CGRectMake(40, goalLabel.frame.size.height+goalLabel.frame.origin.y + 10, WIDTH - 80, 0);
+            goalDetailTextView.frame = CGRectMake(40, goalLabel.frame.size.height+goalLabel.frame.origin.y + 2, WIDTH - 80, 0);
             goalDetailTextView.text = @"本系列课程主要讲了....";
             [cell.contentView addSubview:goalDetailTextView];
         }
@@ -102,11 +131,13 @@
             UILabel *suitablePeopleLabel = [[UILabel alloc] init];
             suitablePeopleLabel.frame = CGRectMake(10, 10, 40, 20);
             suitablePeopleLabel.text = @"适用人群";
+            [suitablePeopleLabel sizeToFit];
             [cell.contentView addSubview:suitablePeopleLabel];
             
             UILabel *suitablePeopleDetailLabel = [[UILabel alloc] init];
             suitablePeopleDetailLabel.frame = CGRectMake(40, suitablePeopleLabel.frame.size.height+suitablePeopleLabel.frame.origin.y + 10, WIDTH - 80, 0);
-            suitablePeopleDetailLabel.text = @"本系列课程主要讲了....";
+            suitablePeopleDetailLabel.text = @"学生，教师";
+            [suitablePeopleLabel sizeToFit];
             [cell.contentView addSubview:suitablePeopleDetailLabel];
         }
         
@@ -116,7 +147,8 @@
     }
     else{
         
-
+        cell.textLabel.text = @"高一物理第一集";
+        
     }
     return cell;
 }
@@ -126,54 +158,14 @@
     
     }
     else{
-    
+        return 60;
     }
     return 120;
 }
--(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if (tableView == basicTable) {
-        
-    }
-    else{
-        
-    }
-    return 0.001;
-}
 
 
--(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
-{
-    if (tableView == basicTable) {
-        
-    }
-    else{
-        
-    }
-    return 0.001;
-}
 
--(UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section
-{
-    if (tableView == basicTable) {
-        
-    }
-    else{
-        
-    }
-    return [[UIView alloc] initWithFrame:CGRectZero];
-}
 
--(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
-{
-    if (tableView == basicTable) {
-        
-    }
-    else{
-        
-    }
-    return [[UIView alloc] initWithFrame:CGRectZero];
-}
 
 
 @end

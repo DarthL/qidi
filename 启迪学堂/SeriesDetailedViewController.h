@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "SuperViewController.h"
-@interface MicroLessonSeriesViewController : SuperViewController
+@interface SeriesDetailedViewController : SuperViewController
 
 @end
