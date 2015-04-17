@@ -250,7 +250,7 @@ static NSString *CELLID = @"discussCommentCell";
     [cell.contentView addSubview:profileView];
 
     UILabel *nickNameLabel = [[UILabel alloc] init];
-    nickNameLabel.frame = CGRectMake(profileView.frame.size.width + profileView.frame.origin.x + 5, profileView.frame.origin.y, WIDTH, profileView.frame.size.height * 0.3);
+    nickNameLabel.frame = CGRectMake(profileView.frame.size.width + profileView.frame.origin.x + 5, profileView.frame.origin.y, WIDTH, profileView.frame.size.height +5);
     nickNameLabel.text = curComment.nickName;
     nickNameLabel.textColor = [UIColor greenColor];
     [nickNameLabel sizeToFit];
@@ -266,17 +266,15 @@ static NSString *CELLID = @"discussCommentCell";
     UITextView *commentTextView = [[UITextView alloc] init];
     commentTextView.editable = NO;
     commentTextView.text = curComment.commentBody;
-    commentTextView.frame = CGRectMake(nickNameLabel.frame.origin.x, profileView.frame.size.height *0.8, WIDTH - profileView.frame.size.width-profileView.frame.origin.x-20-40, 0);
-
+    commentTextView.frame = CGRectMake(nickNameLabel.frame.origin.x,nickNameLabel.frame.origin.y+nickNameLabel.frame.size.height+5,WIDTH - nickNameLabel.frame.origin.x,0);
+    [commentTextView sizeToFit];
     CGRect rect = commentTextView.frame;
-    rect.size.height = [self heightForTextView:commentTextView WithText:curComment.commentBody];
-    [commentTextView setFrame:rect];
     [cell.contentView addSubview:commentTextView];
+    
+    [cell setFrame:CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height+5+nickNameLabel.frame.size.height+10)];
+//    rect.size.height = [self heightForTextView:commentTextView WithText:curComment.commentBody];
+//    [commentTextView setFrame:rect];
 
-    
-    
-    
-    
     return cell;
 
 }
@@ -288,19 +286,21 @@ static NSString *CELLID = @"discussCommentCell";
     if ([indexPath section] == 0) {
         return FirstCellHeight;
     }
-    CommentObject *curComment = [commentObjects objectAtIndex:[indexPath row]];
-    NSString *text = curComment.commentBody;
-    
-    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(290, 20000)];
-    CGFloat height = size.height;
-    if (height < 30) {
-        height = 30;
-    }
-    else{
-        height+=10;
-    }
-    height+=40;
-    return height;
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
+//    CommentObject *curComment = [commentObjects objectAtIndex:[indexPath row]];
+//    NSString *text = curComment.commentBody;
+//    
+//    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(290, 20000)];
+//    CGFloat height = size.height;
+//    if (height < 30) {
+//        height = 30;
+//    }
+//    else{
+//        height+=10;
+//    }
+//    height+=50;
+//    return height;
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -324,12 +324,12 @@ static NSString *CELLID = @"discussCommentCell";
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-#pragma mark 获取TEXTVIEW高度
-- (float) heightForTextView: (UITextView *)textView WithText: (NSString *) strText{
-    float fPadding = 16.0; // 8.0px x 2
-    CGSize constraint = CGSizeMake(textView.frame.size.width - fPadding, CGFLOAT_MAX);
-    CGSize size = [strText sizeWithFont: textView.font constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-    float fHeight = size.height + 16.0;
-    return fHeight;
-}
+//#pragma mark 获取TEXTVIEW高度
+//- (float) heightForTextView: (UITextView *)textView WithText: (NSString *) strText{
+//    float fPadding = 16.0; // 8.0px x 2
+//    CGSize constraint = CGSizeMake(textView.frame.size.width - fPadding, CGFLOAT_MAX);
+//    CGSize size = [strText sizeWithFont: textView.font constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+//    float fHeight = size.height + 16.0;
+//    return fHeight;
+//}
 @end

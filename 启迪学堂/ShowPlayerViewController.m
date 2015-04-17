@@ -130,6 +130,14 @@
     [self.leftbarbtn addTarget:self action:@selector(toback) forControlEvents:UIControlEventTouchUpInside];
     [super viewWillAppear:animated];
     
+    [self.rightbarbtn setTitle:@"收藏" forState:UIControlStateNormal];
+    [self.rightbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [self.rightbarbtn addTarget:self action:@selector(toFav) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)toFav
+{
     
 }
 -(void)toback

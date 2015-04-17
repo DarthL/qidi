@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MicroLesson : NSObject
+@interface MicroLessonObject : NSObject
 @property(nonatomic,strong) NSString *topic;
 @property(nonatomic,strong) NSString *teacherName;
 @property(nonatomic,strong) NSString *instruction;

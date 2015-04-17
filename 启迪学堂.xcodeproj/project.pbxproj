@@ -11,7 +11,7 @@
 		814FE7191ADF513C00E8FD43 /* faviourateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7181ADF513C00E8FD43 /* faviourateViewController.m */; };
 		814FE71F1ADF680200E8FD43 /* favSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE71E1ADF680200E8FD43 /* favSeriesViewController.m */; };
 		814FE7221ADF830100E8FD43 /* SeriesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7211ADF830100E8FD43 /* SeriesObject.m */; };
-		814FE7251ADF840C00E8FD43 /* MicroLesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7241ADF840C00E8FD43 /* MicroLesson.m */; };
+		814FE7251ADF840C00E8FD43 /* MicroLessonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7241ADF840C00E8FD43 /* MicroLessonObject.m */; };
 		814FE7281ADF852900E8FD43 /* favMicroLessonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */; };
 		814FE72B1ADF8AAA00E8FD43 /* SeriesDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FE72A1ADF8AAA00E8FD43 /* SeriesDetailedViewController.m */; };
 		A8825EE61ADA4B5B00FA1C48 /* CommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EDF1ADA4B5B00FA1C48 /* CommentObject.m */; };
@@ -396,8 +396,8 @@
 		814FE71E1ADF680200E8FD43 /* favSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favSeriesViewController.m; sourceTree = "<group>"; };
 		814FE7201ADF830100E8FD43 /* SeriesObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesObject.h; sourceTree = "<group>"; };
 		814FE7211ADF830100E8FD43 /* SeriesObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesObject.m; sourceTree = "<group>"; };
-		814FE7231ADF840C00E8FD43 /* MicroLesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroLesson.h; sourceTree = "<group>"; };
-		814FE7241ADF840C00E8FD43 /* MicroLesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroLesson.m; sourceTree = "<group>"; };
+		814FE7231ADF840C00E8FD43 /* MicroLessonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroLessonObject.h; sourceTree = "<group>"; };
+		814FE7241ADF840C00E8FD43 /* MicroLessonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroLessonObject.m; sourceTree = "<group>"; };
 		814FE7261ADF852900E8FD43 /* favMicroLessonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favMicroLessonsViewController.h; sourceTree = "<group>"; };
 		814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favMicroLessonsViewController.m; sourceTree = "<group>"; };
 		814FE7291ADF8AAA00E8FD43 /* SeriesDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesDetailedViewController.h; sourceTree = "<group>"; };
@@ -1099,10 +1099,6 @@
 				814FE7271ADF852900E8FD43 /* favMicroLessonsViewController.m */,
 				814FE7291ADF8AAA00E8FD43 /* SeriesDetailedViewController.h */,
 				814FE72A1ADF8AAA00E8FD43 /* SeriesDetailedViewController.m */,
-				814FE7201ADF830100E8FD43 /* SeriesObject.h */,
-				814FE7211ADF830100E8FD43 /* SeriesObject.m */,
-				814FE7231ADF840C00E8FD43 /* MicroLesson.h */,
-				814FE7241ADF840C00E8FD43 /* MicroLesson.m */,
 			);
 			name = fav;
 			sourceTree = "<group>";
@@ -1985,6 +1981,12 @@
 		C608E00D1AD6C650002539EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				814FE7201ADF830100E8FD43 /* SeriesObject.h */,
+				814FE7211ADF830100E8FD43 /* SeriesObject.m */,
+				814FE7231ADF840C00E8FD43 /* MicroLessonObject.h */,
+				814FE7241ADF840C00E8FD43 /* MicroLessonObject.m */,
+				A8825EDE1ADA4B5B00FA1C48 /* CommentObject.h */,
+				A8825EDF1ADA4B5B00FA1C48 /* CommentObject.m */,
 				C608E00E1AD6C680002539EB /* Model.h */,
 				C608E00F1AD6C680002539EB /* Model.m */,
 			);
@@ -2166,8 +2168,6 @@
 		C663A5B81AD3AC8600E11627 /* discussion */ = {
 			isa = PBXGroup;
 			children = (
-				A8825EDE1ADA4B5B00FA1C48 /* CommentObject.h */,
-				A8825EDF1ADA4B5B00FA1C48 /* CommentObject.m */,
 				A8825EE21ADA4B5B00FA1C48 /* DiscussionViewController.h */,
 				A8825EE31ADA4B5B00FA1C48 /* DiscussionViewController.m */,
 				A8825EE01ADA4B5B00FA1C48 /* DiscussDetailViewController.h */,
@@ -2791,7 +2791,7 @@
 				C607ACCB1AD926CD005C172E /* MWPhoto.m in Sources */,
 				C6D454361ACE8D3C0013A248 /* AppDelegate.m in Sources */,
 				C607ABAC1AD90FFB005C172E /* ClassHomeViewController.m in Sources */,
-				814FE7251ADF840C00E8FD43 /* MicroLesson.m in Sources */,
+				814FE7251ADF840C00E8FD43 /* MicroLessonObject.m in Sources */,
 				C6D454391ACE8D3C0013A248 /* ____.xcdatamodeld in Sources */,
 				C647D0E91AD7A9030090B987 /* GroupTableViewController.m in Sources */,
 				C663A59F1AD3A96F00E11627 /* POPGeometry.mm in Sources */,

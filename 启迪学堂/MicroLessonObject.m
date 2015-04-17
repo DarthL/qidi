@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 蒲石. All rights reserved.
 //
 
-#import "MicroLesson.h"
+#import "MicroLessonObject.h"
 
-@implementation MicroLesson
+@implementation MicroLessonObject
 
 @end
