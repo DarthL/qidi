@@ -12,7 +12,8 @@
 
 @end
 @interface MeInfo : NSObject
-@property(nonatomic,strong)NSString* username;
-@property(nonatomic,strong)NSString* myId;
+@property(nonatomic,strong)NSString* nickName;
+@property(nonatomic,strong)NSString* userId;
+@property(nonatomic,strong)NSString*headImg;
 
 @end

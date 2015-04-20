@@ -14,7 +14,8 @@
 
 @implementation MeInfo
 
-@synthesize username;
-@synthesize myId;
+@synthesize headImg;
+@synthesize userId;
+@synthesize nickName;
 
 @end

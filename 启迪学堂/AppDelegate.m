@@ -31,6 +31,10 @@
 //@synthesize loginflag;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
+    
+    [SMS_SDK registerApp:@"6df5d2d231f3" withSecret:@"7e4a70cd586689776bc316e02703ba5f"];
+    
     [UMSocialData setAppKey:@"5526254dfd98c5938300021f"];
     
     {

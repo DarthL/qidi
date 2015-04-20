@@ -349,6 +349,12 @@
 		C663A6311AD412B800E11627 /* bg_pub_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C663A62B1AD412B800E11627 /* bg_pub_2.png */; };
 		C663A6321AD412B800E11627 /* bg_pub_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C663A62C1AD412B800E11627 /* bg_pub_2@2x.png */; };
 		C663A6331AD412B800E11627 /* bg_pub_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C663A62D1AD412B800E11627 /* bg_pub_2@3x.png */; };
+		C663D3061AE490E60027BE71 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C663D3021AE490E60027BE71 /* SMS_SDKLocalizable.strings */; };
+		C663D3071AE490E60027BE71 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C663D3041AE490E60027BE71 /* SMS_SDK.framework */; };
+		C663D3091AE4910C0027BE71 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C663D3081AE4910C0027BE71 /* libicucore.dylib */; };
+		C663D30B1AE491220027BE71 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C663D30A1AE491220027BE71 /* MessageUI.framework */; };
+		C6C8C84C1ADE9DED00A137A3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8C84B1ADE9DED00A137A3 /* RegisterViewController.m */; };
+		C6C8C84F1ADEA07A00A137A3 /* TelRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8C84E1ADEA07A00A137A3 /* TelRegisterViewController.m */; };
 		C6D454331ACE8D3C0013A248 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D454321ACE8D3C0013A248 /* main.m */; };
 		C6D454361ACE8D3C0013A248 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D454351ACE8D3C0013A248 /* AppDelegate.m */; };
 		C6D454391ACE8D3C0013A248 /* ____.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6D454371ACE8D3C0013A248 /* ____.xcdatamodeld */; };
@@ -998,6 +1004,15 @@
 		C663A62B1AD412B800E11627 /* bg_pub_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_pub_2.png; sourceTree = "<group>"; };
 		C663A62C1AD412B800E11627 /* bg_pub_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pub_2@2x.png"; sourceTree = "<group>"; };
 		C663A62D1AD412B800E11627 /* bg_pub_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pub_2@3x.png"; sourceTree = "<group>"; };
+		C663D3031AE490E60027BE71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		C663D3041AE490E60027BE71 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		C663D3051AE490E60027BE71 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		C663D3081AE4910C0027BE71 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		C663D30A1AE491220027BE71 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C6C8C84A1ADE9DED00A137A3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		C6C8C84B1ADE9DED00A137A3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		C6C8C84D1ADEA07A00A137A3 /* TelRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelRegisterViewController.h; sourceTree = "<group>"; };
+		C6C8C84E1ADEA07A00A137A3 /* TelRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelRegisterViewController.m; sourceTree = "<group>"; };
 		C6D4542D1ACE8D3C0013A248 /* 启迪学堂.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "启迪学堂.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D454311ACE8D3C0013A248 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6D454321ACE8D3C0013A248 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1042,15 +1057,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C663D30B1AE491220027BE71 /* MessageUI.framework in Frameworks */,
+				C663A5B51AD3A9F300E11627 /* libz.dylib in Frameworks */,
+				C663D3091AE4910C0027BE71 /* libicucore.dylib in Frameworks */,
 				C607ABA91AD8CDD6005C172E /* libEaseMobClientSDK.a in Frameworks */,
 				C608E0091AD6B71F002539EB /* libxml2.dylib in Frameworks */,
+				C663D3071AE490E60027BE71 /* SMS_SDK.framework in Frameworks */,
 				C608E0071AD6B716002539EB /* libresolv.dylib in Frameworks */,
 				C608E0051AD6B708002539EB /* libiconv.dylib in Frameworks */,
 				C608E0031AD6B6F9002539EB /* libstdc++.6.0.9.dylib in Frameworks */,
 				C608E0011AD6B6C9002539EB /* libsqlite3.dylib in Frameworks */,
 				C663A5AD1AD3A9D000E11627 /* CFNetwork.framework in Frameworks */,
 				C663A5B11AD3A9E200E11627 /* MobileCoreServices.framework in Frameworks */,
-				C663A5B51AD3A9F300E11627 /* libz.dylib in Frameworks */,
 				C663A5B31AD3A9EB00E11627 /* CoreGraphics.framework in Frameworks */,
 				C6E82F341AD65E1D0029873B /* libUMSocial_Sdk_4.2.1.a in Frameworks */,
 				C663A5AF1AD3A9DA00E11627 /* SystemConfiguration.framework in Frameworks */,
@@ -1954,6 +1972,7 @@
 		C663A5341AD3A91A00E11627 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				C663D3011AE490E60027BE71 /* SMS_SDK */,
 				C608DF921AD6B62B002539EB /* EaseMobSDK */,
 				C6E82F181AD65E1D0029873B /* UMSocial_Sdk_4.2.1 */,
 				C663A5D21AD3C3D100E11627 /* MBProgressHUD */,
@@ -2288,9 +2307,20 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		C663D3011AE490E60027BE71 /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				C663D3021AE490E60027BE71 /* SMS_SDKLocalizable.strings */,
+				C663D3041AE490E60027BE71 /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
 		C6D454241ACE8D3C0013A248 = {
 			isa = PBXGroup;
 			children = (
+				C663D30A1AE491220027BE71 /* MessageUI.framework */,
+				C663D3081AE4910C0027BE71 /* libicucore.dylib */,
 				C608E0081AD6B71F002539EB /* libxml2.dylib */,
 				C608E0061AD6B716002539EB /* libresolv.dylib */,
 				C608E0041AD6B708002539EB /* libiconv.dylib */,
@@ -2365,6 +2395,10 @@
 			children = (
 				C6E82F151AD658790029873B /* WelcomeViewController.h */,
 				C6E82F161AD658790029873B /* WelcomeViewController.m */,
+				C6C8C84A1ADE9DED00A137A3 /* RegisterViewController.h */,
+				C6C8C84B1ADE9DED00A137A3 /* RegisterViewController.m */,
+				C6C8C84D1ADEA07A00A137A3 /* TelRegisterViewController.h */,
+				C6C8C84E1ADEA07A00A137A3 /* TelRegisterViewController.m */,
 			);
 			name = welcome;
 			sourceTree = "<group>";
@@ -2548,6 +2582,7 @@
 				C607AE141AD92B7E005C172E /* messageSendFail@2x.png in Resources */,
 				C607ADDD1AD92B7E005C172E /* VoiceSearchFeedback009.png in Resources */,
 				C607AE251AD92B7E005C172E /* chatBar_recordSelected.png in Resources */,
+				C663D3061AE490E60027BE71 /* SMS_SDKLocalizable.strings in Resources */,
 				C607AE361AD92B7E005C172E /* chatBar_more_cameraSelected@2x.png in Resources */,
 				C607AE351AD92B7E005C172E /* chatBar_more_cameraSelected.png in Resources */,
 				C663A6091AD3C3D100E11627 /* MBProgressHUD.bundle in Resources */,
@@ -2743,6 +2778,7 @@
 				C607AD041AD92798005C172E /* NSDate+Category.m in Sources */,
 				C663A59B1AD3A96F00E11627 /* POPBasicAnimation.mm in Sources */,
 				C6554A0B1AD56890003D76AC /* writeNoteViewController.m in Sources */,
+				C6C8C84C1ADE9DED00A137A3 /* RegisterViewController.m in Sources */,
 				C647D0E31AD7A6070090B987 /* AboutUsViewController.m in Sources */,
 				C607ACCB1AD926CD005C172E /* MWPhoto.m in Sources */,
 				C6D454361ACE8D3C0013A248 /* AppDelegate.m in Sources */,
@@ -2808,6 +2844,7 @@
 				C607ACEC1AD926CD005C172E /* PSTGridLayoutRow.m in Sources */,
 				C663A5991AD3A96F00E11627 /* POPAnimationTracer.mm in Sources */,
 				C663A5C31AD3AD0700E11627 /* MineViewController.m in Sources */,
+				C6C8C84F1ADEA07A00A137A3 /* TelRegisterViewController.m in Sources */,
 				C647D0DD1AD779830090B987 /* CallbackViewController.m in Sources */,
 				A8825EE71ADA4B5B00FA1C48 /* DiscussDetailViewController.m in Sources */,
 				C647D0DA1AD777370090B987 /* NoticeViewController.m in Sources */,
@@ -2905,6 +2942,15 @@
 				C663A55B1AD3A96F00E11627 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C663D3021AE490E60027BE71 /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C663D3031AE490E60027BE71 /* en */,
+				C663D3051AE490E60027BE71 /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 		C6D4543D1ACE8D3C0013A248 /* Main.storyboard */ = {
@@ -3018,6 +3064,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/启迪学堂/SMS_SDK",
+				);
 				INFOPLIST_FILE = "启迪学堂/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3037,6 +3087,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/启迪学堂/SMS_SDK",
+				);
 				INFOPLIST_FILE = "启迪学堂/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
