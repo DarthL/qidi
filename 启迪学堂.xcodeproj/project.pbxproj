@@ -12,7 +12,6 @@
 		A8825EE81ADA4B5B00FA1C48 /* DiscussionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EE31ADA4B5B00FA1C48 /* DiscussionViewController.m */; };
 		A8825EE91ADA4B5B00FA1C48 /* NewTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8825EE51ADA4B5B00FA1C48 /* NewTopicViewController.m */; };
 		A8825EEB1ADA4B6300FA1C48 /* profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8825EEA1ADA4B6300FA1C48 /* profile.jpg */; };
-		C607ABA91AD8CDD6005C172E /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C607ABA81AD8CDD6005C172E /* libEaseMobClientSDK.a */; };
 		C607ABAC1AD90FFB005C172E /* ClassHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C607ABAB1AD90FFB005C172E /* ClassHomeViewController.m */; };
 		C607AC351AD9256C005C172E /* ChatSendHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C607AC021AD9256C005C172E /* ChatSendHelper.m */; };
 		C607AC361AD9256C005C172E /* ChatViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C607AC041AD9256C005C172E /* ChatViewController+Category.m */; };
@@ -396,7 +395,6 @@
 		A8825EE41ADA4B5B00FA1C48 /* NewTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTopicViewController.h; sourceTree = "<group>"; };
 		A8825EE51ADA4B5B00FA1C48 /* NewTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTopicViewController.m; sourceTree = "<group>"; };
 		A8825EEA1ADA4B6300FA1C48 /* profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile.jpg; sourceTree = "<group>"; };
-		C607ABA81AD8CDD6005C172E /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
 		C607ABAA1AD90FFB005C172E /* ClassHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassHomeViewController.h; sourceTree = "<group>"; };
 		C607ABAB1AD90FFB005C172E /* ClassHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassHomeViewController.m; sourceTree = "<group>"; };
 		C607AC011AD9256C005C172E /* ChatSendHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSendHelper.h; sourceTree = "<group>"; };
@@ -1060,7 +1058,6 @@
 				C663D30B1AE491220027BE71 /* MessageUI.framework in Frameworks */,
 				C663A5B51AD3A9F300E11627 /* libz.dylib in Frameworks */,
 				C663D3091AE4910C0027BE71 /* libicucore.dylib in Frameworks */,
-				C607ABA91AD8CDD6005C172E /* libEaseMobClientSDK.a in Frameworks */,
 				C608E0091AD6B71F002539EB /* libxml2.dylib in Frameworks */,
 				C663D3071AE490E60027BE71 /* SMS_SDK.framework in Frameworks */,
 				C608E0071AD6B716002539EB /* libresolv.dylib in Frameworks */,
@@ -1947,7 +1944,6 @@
 		C608DFF81AD6B62B002539EB /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				C607ABA81AD8CDD6005C172E /* libEaseMobClientSDK.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
