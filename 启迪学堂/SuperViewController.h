@@ -27,6 +27,8 @@
 #define KEY_WINDOW  [[UIApplication sharedApplication]keyWindow]
 #define CellChangeSelectedColor cell.selectionStyle = UITableViewCellSelectionStyleNone//cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];cell.selectedBackgroundView.backgroundColor =[UIColor clearColor]
 
+#define WebAddress @"http://qdschool.eternesoft.com/api/"
+
 @interface SuperViewController : UIViewController
 @property(nonatomic,strong)NSString*rightbarimg;
 @property(nonatomic,strong)UIButton*rightbarbtn;

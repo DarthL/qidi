@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SuperViewController.h"
+#import <SMS_SDK/SMS_SDKResultHanderDef.h>
+
 @interface WelcomeViewController : SuperViewController
 
 @end

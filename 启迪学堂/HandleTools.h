@@ -14,4 +14,10 @@
 +(UIColor*)colorStringToInt:(NSString *)color;
 +(BOOL)checkNetWork;
 +(NSDictionary*)AsiGetSync:(NSString*)strURL;
++(id)diction2Bean:(NSDictionary*)dic bean:(id)abean;
++(BOOL) IsEnableWIFI;
++(NSString*)md5:(NSString*)strURL;//md5加密过程
++(NSString *) utf8ToUnicode:(NSString *)string;
+
+
 @end
