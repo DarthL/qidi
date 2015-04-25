@@ -56,7 +56,7 @@
     
     {
         navigationtitle=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-100, 10, 200, 25)];
-        navigationtitle.textAlignment=UITextAlignmentCenter;
+        navigationtitle.textAlignment=NSTextAlignmentCenter;
         navigationtitle.backgroundColor=[UIColor clearColor];
         navigationtitle.textColor=[HandleTools colorStringToInt:@"#646464"];
         [navigationtitle setFont:[UIFont fontWithName:@"STHeitiSC-Light" size:18]];
@@ -64,7 +64,7 @@
         [self.navigationController.navigationBar addSubview:navigationtitle];
 
     }
-    
+//    self.navigationController.navigationBar.backgroundColor = [HandleTools colorStringToInt:@"0x00b4ff"];
     
 }
 -(void)viewWillDisappear:(BOOL)animated

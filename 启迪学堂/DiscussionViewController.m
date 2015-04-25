@@ -59,8 +59,8 @@ static NSString *kREAD = @"READ";
     
 
     UIScrollView *dicussScrollView = [[UIScrollView alloc] init];
-    dicussScrollView.frame = CGRectMake(0, 0, WIDTH, 55);
-    dicussScrollView.backgroundColor = [HandleTools colorStringToInt:@"0xcccccc"];
+    dicussScrollView.frame = CGRectMake(0, 0, WIDTH, 40);
+    dicussScrollView.backgroundColor = [HandleTools colorStringToInt:@"0xffffff"];
     dicussScrollView.showsHorizontalScrollIndicator = NO;
     
     
@@ -73,7 +73,7 @@ static NSString *kREAD = @"READ";
         
         UIButton *btn = [[UIButton alloc] init];
         btn.tag = i;
-        btn.frame = CGRectMake(110*i+10, 5, 100, 45);
+        btn.frame = CGRectMake(110*i+10, 0, 100, 40);
         [btn addTarget:self action:@selector(groupBtnClicked) forControlEvents:UIControlEventTouchUpInside];
         //[btn setTitle:groupArray[0] forState:UIControlStateNormal];
         //btn.titleLabel.numberOfLines = 0;
@@ -104,7 +104,7 @@ static NSString *kREAD = @"READ";
     //悬浮按钮
     topBtn = [[UIButton alloc] init];
     topBtn.frame = CGRectMake(WIDTH - 60, HEIGHT - 200, 40, 40);
-    [topBtn setBackgroundColor:[UIColor blackColor]];
+    [topBtn setBackgroundImage:[UIImage imageNamed:@"post_button.png"] forState:UIControlStateNormal];
     [topBtn addTarget:self action:@selector(toNewTopic) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:topBtn];
 //    [self.view bringSubviewToFront:topBtn];
@@ -114,6 +114,7 @@ static NSString *kREAD = @"READ";
 {
     [super viewWillAppear:animated];
     [self.navigationtitle setText:@"讨论"];
+
     
 }
 -(void)viewWillDisappear:(BOOL)animated
@@ -157,31 +158,61 @@ static NSString *kREAD = @"READ";
     
     NSDictionary *curDiscussInfo = [discussArray objectAtIndex:[indexPath row]];
     
+    UILabel *topicTextView = [[UILabel alloc] init];
+    topicTextView.frame = CGRectMake(10, 10, WIDTH, 25);
+    topicTextView.textColor = [HandleTools colorStringToInt:@"0x282828"];
+    topicTextView.font = [UIFont boldSystemFontOfSize:13];
+    topicTextView.userInteractionEnabled = NO;
+    topicTextView.text = curDiscussInfo[kTOPIC];
+    [topicTextView sizeToFit];
+    [cell.contentView addSubview:topicTextView];
     
     UILabel *authorlabel = [[UILabel alloc] init];
-    authorlabel.frame = CGRectMake(15, 75, 100, 10);
+    authorlabel.frame = CGRectMake(topicTextView.frame.origin.x, topicTextView.frame.origin.y+topicTextView.frame.size.height + 10, 100, 20);
     authorlabel.text = curDiscussInfo[kAUTHOR];
+    authorlabel.font = [UIFont fontWithName:@"Helvetica" size:11];
+    authorlabel.textColor = [HandleTools colorStringToInt:@"0xe99511"];
     [authorlabel sizeToFit];
     [cell.contentView addSubview:authorlabel];
     
     UILabel *timelabel = [[UILabel alloc] init];
-    timelabel.frame = CGRectMake(authorlabel.frame.origin.x+authorlabel.frame.size.width + 20, 80, 100, 10);
+    timelabel.frame = CGRectMake(authorlabel.frame.origin.x+authorlabel.frame.size.width + 20, authorlabel.frame.origin.y, 100, 20);
     timelabel.text = [NSString stringWithFormat:@"%@小时前",curDiscussInfo[kTIME]];
+    timelabel.font = [UIFont fontWithName:@"Helvetica" size:11];
     [timelabel setTextColor:[HandleTools colorStringToInt:@"0x078700"]];
+    [timelabel sizeToFit];
     [cell.contentView addSubview:timelabel];
     
-    UILabel *replyandReadLabel = [[UILabel alloc] init];
-    replyandReadLabel.frame = CGRectMake(WIDTH - 100, 80, 100, 10);
-    replyandReadLabel.text = [NSString stringWithFormat:@"回:%@  阅:%@",curDiscussInfo[kREPLY],curDiscussInfo[kREAD]];
-    [cell.contentView addSubview:replyandReadLabel];
+    UIImageView *readNumImage = [[UIImageView alloc] init];
+    readNumImage.frame = CGRectMake(WIDTH - 107, timelabel.frame.origin.y, 14, 8);
+    [readNumImage setImage:[UIImage imageNamed:@"see_icon"]];
+    [cell.contentView addSubview:readNumImage];
     
-    UITextView *topicTextView = [[UITextView alloc] init];
-    topicTextView.frame = CGRectMake(15, 10, WIDTH, 50);
-    topicTextView.textColor = [HandleTools colorStringToInt:@"2b749f"];
-    topicTextView.font = [UIFont boldSystemFontOfSize:18];
-    topicTextView.userInteractionEnabled = NO;
-    topicTextView.text = curDiscussInfo[kTOPIC];
-    [cell.contentView addSubview:topicTextView];
+    UILabel *readNumLabel = [[UILabel alloc] init];
+    readNumLabel.frame = CGRectMake(readNumImage.frame.origin.x+readNumImage.frame.size.width + 2, readNumImage.frame.origin.y, 0, 10);
+    readNumLabel.text = @"12345";
+    readNumLabel.font = [UIFont fontWithName:@"Helvetica" size:10];
+    [readNumLabel sizeToFit];
+    [cell.contentView addSubview:readNumLabel];
+    
+    UIImageView *replyNumImage = [[UIImageView alloc] init];
+    replyNumImage.frame = CGRectMake(WIDTH - 48, timelabel.frame.origin.y, 12, 11);
+    [replyNumImage setImage:[UIImage imageNamed:@"comment_icon"]];
+    [cell.contentView addSubview:replyNumImage];
+    
+    UILabel *replyNumLabel = [[UILabel alloc] init];
+    replyNumLabel.frame = CGRectMake(replyNumImage.frame.origin.x+replyNumImage.frame.size.width + 2, replyNumImage.frame.origin.y, 0, 10);
+    replyNumLabel.text = @"66";
+    replyNumLabel.font = [UIFont fontWithName:@"Helvetica" size:10];
+    [replyNumLabel sizeToFit];
+    [cell.contentView addSubview:replyNumLabel];
+    
+//    UILabel *replyandReadLabel = [[UILabel alloc] init];
+//    replyandReadLabel.frame = CGRectMake(WIDTH - 100, 80, 100, 10);
+//    replyandReadLabel.text = [NSString stringWithFormat:@"回:%@  阅:%@",curDiscussInfo[kREPLY],curDiscussInfo[kREAD]];
+//    [cell.contentView addSubview:replyandReadLabel];
+    
+
     
     
     return cell;
@@ -209,7 +240,7 @@ static NSString *kREAD = @"READ";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 100;
+    return 70;
 }
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
 {

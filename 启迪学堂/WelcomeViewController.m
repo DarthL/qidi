@@ -29,64 +29,103 @@
     // Do any additional setup after loading the view.
     delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
 
-    self.view.backgroundColor=[UIColor greenColor];
+    self.view.backgroundColor=[UIColor whiteColor];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
+    UIView *aboveView = [[UIView alloc] init];
+    aboveView.frame = CGRectMake(0, 0, WIDTH, 380);
+    aboveView.backgroundColor = [HandleTools colorStringToInt:@"0x2d9ad2"];
+    [self.view addSubview:aboveView];
+    
+    UIView *flowerBorderView = [[UIView alloc] init];
+    
+    flowerBorderView.frame = CGRectMake(0, 380, WIDTH, 40);
+    [flowerBorderView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_flower"]]];
+    [self.view addSubview:flowerBorderView];
     
     {
-        loginnum=[[UITextField alloc]initWithFrame:CGRectMake(20, 100, WIDTH-40, 30)];
+        
+        UIImageView *loginInputView = [[UIImageView alloc] init];
+        loginInputView.frame = CGRectMake(50, 180, WIDTH-100, 90);
+        UIImage *image = [UIImage imageNamed:@"input_area"];
+        image = [image stretchableImageWithLeftCapWidth:7 topCapHeight:6];
+        loginInputView.image = image;
+        [self.view addSubview:loginInputView];
+        
+        
+        loginnum=[[UITextField alloc]initWithFrame:CGRectMake(18, 3, loginInputView.frame.size.width - 50, 40)];
         loginnum.placeholder=@"邮箱/手机号";
-        loginnum.backgroundColor=[UIColor whiteColor];
+        loginnum.backgroundColor=[UIColor clearColor];
         loginnum.delegate=self;
-        [self.view addSubview:loginnum];
-    }
-    {
-        passwd=[[UITextField alloc]initWithFrame:CGRectMake(20, 140, WIDTH-40, 30)];
+        [loginInputView addSubview:loginnum];
+        
+        UIButton *pullBtn = [[UIButton alloc] initWithFrame:CGRectMake(loginInputView.frame.size.width - 15-15, loginnum.frame.origin.x, 15, 8)];
+        [pullBtn setBackgroundImage:[UIImage imageNamed:@"select_id_button"] forState:UIControlStateNormal];
+        [pullBtn addTarget:self action:@selector(popHistoryAccount) forControlEvents:UIControlEventTouchUpInside];
+        
+        [loginInputView addSubview:pullBtn];
+        
+        //画直线
+        
+        passwd=[[UITextField alloc]initWithFrame:CGRectMake(18, loginnum.frame.origin.y+loginnum.frame.size.height ,loginInputView.frame.size.width - 50, 40)];
         passwd.placeholder=@"密码";
         passwd.secureTextEntry=YES;
         passwd.delegate=self;
-        passwd.backgroundColor=[UIColor whiteColor];
-        [self.view addSubview:passwd];
+        passwd.backgroundColor=[UIColor clearColor];
+        [loginInputView addSubview:passwd];
         
-        UIButton*loginbtn=[[UIButton alloc]initWithFrame:CGRectMake(30, passwd.frame.origin.y+passwd.frame.size.height+10, WIDTH-60, 30)];
-        loginbtn.backgroundColor=[UIColor redColor];
-        [loginbtn setTitle:@"登陆" forState:UIControlStateNormal];
+        UIButton*loginbtn=[[UIButton alloc]initWithFrame:CGRectMake(50,loginInputView.frame.size.height+loginInputView.frame.origin.y+20,WIDTH-100,35)];
+        loginbtn.backgroundColor=[HandleTools colorStringToInt:@"0x116591"];
+        [loginbtn setTitle:@"登录" forState:UIControlStateNormal];
+        loginbtn.layer.cornerRadius = 5.0f;
         [loginbtn addTarget:self action:@selector(loginonapp) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:loginbtn];
+    
+        UIButton *forgotPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, loginbtn.frame.size.height+loginbtn.frame.origin.y + 20, 80,15)];
+        NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"忘记密码？"];
+        NSRange strRange = {0,[str length]};
+        [str addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:strRange];
+        [str addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:strRange];
+        [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica" size:13] range:strRange];
+        [forgotPwdBtn setAttributedTitle:str forState:UIControlStateNormal];
+        [forgotPwdBtn addTarget:self action:@selector(forgotPwdBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:forgotPwdBtn];
+    
         
-        UIButton*registbtn=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-80, loginbtn.frame.origin.y+loginbtn.frame.size.height+10, 60, 30)];
-        registbtn.backgroundColor=[UIColor purpleColor];
+        UIButton*registbtn=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-loginbtn.frame.origin.x-38, forgotPwdBtn.frame.origin.y, 38, 20)];
         [registbtn setTitle:@"注册" forState:UIControlStateNormal];
+        registbtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
         [registbtn addTarget:self action:@selector(toregister) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:registbtn];
-    }
-
-    
-    
-    
-    {
-    UIButton*btn=[[UIButton alloc]initWithFrame:CGRectMake(80, 300, 30, 30)];
-    btn.backgroundColor=[UIColor blueColor];
-    [btn setTitle:@"QQ" forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(loginQQ) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    }
-    {
-    UIButton*btn=[[UIButton alloc]initWithFrame:CGRectMake(80+50, 300, 30, 30)];
-    btn.backgroundColor=[UIColor blueColor];
-    [btn setTitle:@"WB" forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(loginWB) forControlEvents:UIControlEventTouchUpInside];
-
-    [self.view addSubview:btn];
-    }
-    {
-        UIButton*btn=[[UIButton alloc]initWithFrame:CGRectMake(80+50*2, 300, 30, 30)];
-        btn.backgroundColor=[UIColor blueColor];
-        [btn setTitle:@"RR" forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(loginRR) forControlEvents:UIControlEventTouchUpInside];
-
-        [self.view addSubview:btn];
         
+        UILabel *otherAccountLoginLabel = [[UILabel alloc] init];
+        otherAccountLoginLabel.text = @"其他账号登录";
+        [otherAccountLoginLabel sizeToFit];
+        otherAccountLoginLabel.frame = CGRectMake(WIDTH * 0.5 - otherAccountLoginLabel.frame.size.width * 0.5, flowerBorderView.frame.size.height+flowerBorderView.frame.origin.y+ 10, otherAccountLoginLabel.frame.size.width, otherAccountLoginLabel.frame.size.height);
+        otherAccountLoginLabel.textColor = [HandleTools colorStringToInt:@"0x2d9ad2"];
+        [self.view addSubview:otherAccountLoginLabel];
+        
+        
+        UIButton *qqBtn = [[UIButton alloc]initWithFrame:CGRectMake(WIDTH *0.25 - 67 * 0.75, otherAccountLoginLabel.frame.origin.y+otherAccountLoginLabel.frame.size.height + 18, 67, 67)];
+        [qqBtn setBackgroundImage:[UIImage imageNamed:@"qq_login_button"] forState:UIControlStateNormal];
+        [qqBtn addTarget:self action:@selector(loginQQ) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:qqBtn];
+        
+        
+        UIButton *WBbtn = [[UIButton alloc]initWithFrame:CGRectMake(WIDTH*0.5 - 67*0.5, otherAccountLoginLabel.frame.origin.y+otherAccountLoginLabel.frame.size.height + 18, 67, 67)];
+        [WBbtn setBackgroundImage:[UIImage imageNamed:@"sina_login_button"] forState:UIControlStateNormal];
+        [WBbtn addTarget:self action:@selector(loginWB) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:WBbtn];
+        
+        
+        UIButton *rrbtn=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH*0.75- 67*0.25, otherAccountLoginLabel.frame.origin.y+otherAccountLoginLabel.frame.size.height + 18, 67, 67)];
+        [rrbtn setBackgroundImage:[UIImage imageNamed:@"renren_login_button"] forState:UIControlStateNormal];
+        [rrbtn addTarget:self action:@selector(loginRR) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:rrbtn];
     }
+    
+    
+    
 
     
 }

@@ -345,7 +345,7 @@
                   symbolName = "-[WelcomeViewController loginonapp]"
                   moduleName = "&#x542f;&#x8fea;&#x5b66;&#x5802;"
                   urlString = "file:///Users/pushi/qidi-1/%E5%90%AF%E8%BF%AA%E5%AD%A6%E5%A0%82/WelcomeViewController.m"
-                  timestampString = "451214238.882328"
+                  timestampString = "451231608.108113"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "275"
@@ -359,7 +359,7 @@
                   symbolName = "__35-[WelcomeViewController loginonapp]_block_invoke"
                   moduleName = "&#x542f;&#x8fea;&#x5b66;&#x5802;"
                   urlString = "file:///Users/pushi/qidi-1/%E5%90%AF%E8%BF%AA%E5%AD%A6%E5%A0%82/WelcomeViewController.m"
-                  timestampString = "451214238.882531"
+                  timestampString = "451231608.10828"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "275"
@@ -478,6 +478,38 @@
             startingLineNumber = "288"
             endingLineNumber = "288"
             landmarkName = "-loginonapp"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x542f;&#x8fea;&#x5b66;&#x5802;/HandleTools.m"
+            timestampString = "451231337.951744"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "+AsiGetSync:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x542f;&#x8fea;&#x5b66;&#x5802;/HandleTools.m"
+            timestampString = "451231352.817459"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "+AsiGetSync:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

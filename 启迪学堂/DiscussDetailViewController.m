@@ -10,7 +10,7 @@
 #import "CommentObject.h"
 #import "HandleTools.h"
 #import "ReplyViewController.h"
-#define FirstCellHeight 260
+#define FirstCellHeight 75
 
 static NSString *CELLID = @"discussCommentCell";
 
@@ -69,80 +69,78 @@ static NSString *CELLID = @"discussCommentCell";
     
     
     self.navigationController.title = _topic;
-    self.view.backgroundColor = [HandleTools colorStringToInt:@"0xe1e1e1"];
+    self.view.backgroundColor = [HandleTools colorStringToInt:@"0xf5f5f5"];
     
     
     
     
     {
         aboveView = [[UIView alloc] init];
-        aboveView.frame = CGRectMake(0, 0, WIDTH, FirstCellHeight);
+        aboveView.frame = CGRectMake(0, 6, WIDTH, FirstCellHeight);
         aboveView.backgroundColor = [UIColor whiteColor];
         
-        labelTopic = [[UILabel alloc] init];
-        labelTopic.frame = CGRectMake(20, 20, WIDTH, 15);
-        labelTopic.text = _topic;
-        [aboveView addSubview:labelTopic];
+
+
+        
+        UILabel *topicTextView = [[UILabel alloc] init];
+        topicTextView.frame = CGRectMake(10, 10, WIDTH, 25);
+        topicTextView.textColor = [HandleTools colorStringToInt:@"0x282828"];
+        topicTextView.font = [UIFont boldSystemFontOfSize:13];
+        topicTextView.userInteractionEnabled = NO;
+        topicTextView.text = _topic;
+        [topicTextView sizeToFit];
+        [aboveView addSubview:topicTextView];
         
         imageViewProfile = [[UIImageView alloc] init];
-        imageViewProfile.frame = CGRectMake(20, labelTopic.frame.origin.y+labelTopic.frame.size.height + 10, 40, 40);
+        imageViewProfile.frame = CGRectMake(12,  topicTextView.frame.origin.y+topicTextView.frame.size.height + 8, 20, 20);
         imageViewProfile.image = [UIImage imageNamed:@"profile.jpg"];
-        imageViewProfile.layer.cornerRadius = 20;
+        imageViewProfile.layer.cornerRadius = 10;
         imageViewProfile.layer.masksToBounds = YES;
         [aboveView addSubview:imageViewProfile];
         
-        labelAuthor = [[UILabel alloc] init];
-        labelAuthor.frame = CGRectMake(imageViewProfile.frame.origin.x+imageViewProfile.frame.size.width + 10, imageViewProfile.frame.origin.y, WIDTH - labelAuthor.frame.origin.x - 10, imageViewProfile.frame.size.height*0.3);
-        labelAuthor.text = _author;
-        labelAuthor.textColor = [UIColor greenColor];
-        [labelAuthor sizeToFit];
-        [aboveView addSubview:labelAuthor];
+        UILabel *authorlabel = [[UILabel alloc] init];
+        authorlabel.frame = CGRectMake(imageViewProfile.frame.origin.x + imageViewProfile.frame.size.width + 8, topicTextView.frame.origin.y+topicTextView.frame.size.height + 10, 100, 20);
+        authorlabel.text = _author;
+        authorlabel.font = [UIFont fontWithName:@"Helvetica" size:11];
+        authorlabel.textColor = [HandleTools colorStringToInt:@"0xff8901"];
+        [authorlabel sizeToFit];
+        [aboveView addSubview:authorlabel];
         
-        labelDate = [[UILabel alloc] init];
-        labelDate.frame = CGRectMake(labelAuthor.frame.origin.x, labelAuthor.frame.origin.y+labelAuthor.frame.size.height+5, WIDTH, labelAuthor.frame.size.height);
-        labelDate.text = @"2014-04-30";
-        labelDate.textColor = [UIColor grayColor];
-        [labelDate sizeToFit];
-        [aboveView addSubview:labelDate];
+
         
-        textViewContent = [[UITextView alloc] init];
-        textViewContent.frame = CGRectMake(30, imageViewProfile.frame.size.height+imageViewProfile.frame.origin.y + 10, WIDTH - 60, 130);
-        textViewContent.text = @"如题，看到有个帖子说不支持WDCP。";//_content;
-        textViewContent.font = [UIFont boldSystemFontOfSize:20];
-        textViewContent.editable = NO;
-        [aboveView addSubview:textViewContent];
+        UILabel *timelabel = [[UILabel alloc] init];
+        timelabel.frame = CGRectMake(authorlabel.frame.origin.x+authorlabel.frame.size.width + 20, authorlabel.frame.origin.y, 100, 20);
+        timelabel.text = [NSString stringWithFormat:@"%@小时前",@"1"];
+        timelabel.font = [UIFont fontWithName:@"Helvetica" size:11];
+        [timelabel setTextColor:[HandleTools colorStringToInt:@"0x078700"]];
+        [timelabel sizeToFit];
+        [aboveView addSubview:timelabel];
         
-        showInFlashBtn = [[UIButton alloc] init];
-        showInFlashBtn.frame = CGRectMake(20, textViewContent.frame.origin.y+textViewContent.frame.size.height + 10, 100, 20);
-        [showInFlashBtn setTitle:@"Flash课时演示" forState:UIControlStateNormal];
-        [showInFlashBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-        [showInFlashBtn setBackgroundColor:[UIColor whiteColor]];
-        showInFlashBtn.showsTouchWhenHighlighted = YES;
-        [showInFlashBtn addTarget:self action:@selector(showInFlashBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-        showInFlashBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-        [aboveView addSubview:showInFlashBtn];
+        UIImageView *readNumImage = [[UIImageView alloc] init];
+        readNumImage.frame = CGRectMake(WIDTH - 107, timelabel.frame.origin.y, 14, 8);
+        [readNumImage setImage:[UIImage imageNamed:@"see_icon"]];
+        [aboveView addSubview:readNumImage];
         
-        labelReply = [[UILabel alloc] init];
-        labelReply.frame = CGRectMake(WIDTH - 25, showInFlashBtn.frame.origin.y, 20, 20);
-        labelReply.text = [NSString stringWithFormat:@"%d",_replyNumber];
-        [labelReply sizeToFit];
-        [aboveView addSubview:labelReply];
+        UILabel *readNumLabel = [[UILabel alloc] init];
+        readNumLabel.frame = CGRectMake(readNumImage.frame.origin.x+readNumImage.frame.size.width + 2, readNumImage.frame.origin.y, 0, 10);
+        readNumLabel.text = @"12345";
+        readNumLabel.font = [UIFont fontWithName:@"Helvetica" size:10];
+        [readNumLabel sizeToFit];
+        [aboveView addSubview:readNumLabel];
         
-        imageViewReply = [[UIImageView alloc] init];
-        imageViewReply.frame = CGRectMake(labelReply.frame.origin.x - 20 - 10, labelReply.frame.origin.y, 20, 20);
-        imageViewReply.image = [UIImage imageNamed:@"profile.jpg"];
-        [aboveView addSubview:imageViewReply];
+        UIImageView *replyNumImage = [[UIImageView alloc] init];
+        replyNumImage.frame = CGRectMake(WIDTH - 48, timelabel.frame.origin.y, 12, 11);
+        [replyNumImage setImage:[UIImage imageNamed:@"comment_icon"]];
+        [aboveView addSubview:replyNumImage];
         
-        labelRead = [[UILabel alloc] init];
-        labelRead.frame = CGRectMake(imageViewReply.frame.origin.x-20-20, labelReply.frame.origin.y, 20, 20);
-        labelRead.text = [NSString stringWithFormat:@"%d",_readNumber];
-        [labelRead sizeToFit];
-        [aboveView addSubview:labelRead];
+        UILabel *replyNumLabel = [[UILabel alloc] init];
+        replyNumLabel.frame = CGRectMake(replyNumImage.frame.origin.x+replyNumImage.frame.size.width + 2, replyNumImage.frame.origin.y, 0, 10);
+        replyNumLabel.text = @"66";
+        replyNumLabel.font = [UIFont fontWithName:@"Helvetica" size:10];
+        [replyNumLabel sizeToFit];
+        [aboveView addSubview:replyNumLabel];
         
-        imageViewRead = [[UIImageView alloc] init];
-        imageViewRead.frame = CGRectMake(labelRead.frame.origin.x-20-10, labelReply.frame.origin.y, 20, 20);
-        imageViewRead.image = [UIImage imageNamed:@"profile.jpg"];
-        [aboveView addSubview:imageViewRead];
+
         
     }
     
@@ -152,7 +150,7 @@ static NSString *CELLID = @"discussCommentCell";
         commentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,/*HEIGHT * 0.4*/ WIDTH, HEIGHT-64) style:UITableViewStyleGrouped];
         commentTableView.delegate = self;
         commentTableView.dataSource = self;
-
+        commentTableView.separatorColor = [HandleTools colorStringToInt:@"0xe7e7e7"];
         
         [self.view addSubview:commentTableView];
         
@@ -161,10 +159,11 @@ static NSString *CELLID = @"discussCommentCell";
     //悬浮按钮
     topBtn = [[UIButton alloc] init];
     topBtn.frame = CGRectMake(WIDTH - 60, HEIGHT - 200, 40, 40);
-    [topBtn setBackgroundColor:[UIColor blackColor]];
+    [topBtn setBackgroundImage:[UIImage imageNamed:@"comment_button.png"] forState:UIControlStateNormal];
+    
     [topBtn addTarget:self action:@selector(toReply) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:topBtn];
-    [self.view addSubview:topBtn];
+    [self.view addSubview:aboveView];
     
 
     
@@ -175,10 +174,11 @@ static NSString *CELLID = @"discussCommentCell";
     [super viewWillAppear:animated];
     [self.navigationtitle setText:_topic];
     [self.leftbarbtn setTitle:@"后退" forState:UIControlStateNormal];
-    [self.leftbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+//    [self.leftbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [self.leftbarbtn setBackgroundImage:[UIImage imageNamed:@"back_button"] forState:UIControlStateNormal];
+    
     [self.leftbarbtn addTarget:self action:@selector(toback) forControlEvents:UIControlEventTouchUpInside];
 
-    
     
 }
 
@@ -214,7 +214,7 @@ static NSString *CELLID = @"discussCommentCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     if (section == 0) {
-        return 1;
+        return 2;
     }
     return commentObjects.count;
 }
@@ -235,7 +235,24 @@ static NSString *CELLID = @"discussCommentCell";
     cell.backgroundColor=[UIColor whiteColor];
     
     if ([indexPath section] == 0) {
-        [cell.contentView addSubview:aboveView];
+        if([indexPath row] == 0){
+            [cell.contentView addSubview:aboveView];
+        }
+        else if ([indexPath row] == 1){
+            textViewContent = [[UITextView alloc] init];
+            textViewContent.frame = CGRectMake(12, 12, WIDTH - 12,0);
+            textViewContent.text = @"如题，看到有个帖子说不支持WDCP。";//_content;
+            [textViewContent sizeToFit];
+    
+            textViewContent.font = [UIFont fontWithName:@"Helvetica" size:12];
+            textViewContent.editable = NO;
+            CGRect rect = textViewContent.frame;
+            [cell.contentView addSubview:textViewContent];
+            
+            [cell setFrame:CGRectMake(rect.origin.x,rect.origin.y, rect.size.width, rect.size.height+30)];
+            [cell.contentView addSubview:textViewContent];
+            
+        }
         return cell;
     }
     
@@ -243,30 +260,34 @@ static NSString *CELLID = @"discussCommentCell";
     CommentObject *curComment = [commentObjects objectAtIndex:[indexPath row]];
     
     UIImageView *profileView = [[UIImageView alloc] init];
-    profileView.frame = CGRectMake(20, 10, 40, 40);
+    profileView.frame = CGRectMake(12, 15, 20, 20);
     profileView.image = curComment.profileImage;
-    profileView.layer.cornerRadius = 20;
+    profileView.layer.cornerRadius = 10;
     profileView.layer.masksToBounds = YES;
     [cell.contentView addSubview:profileView];
 
     UILabel *nickNameLabel = [[UILabel alloc] init];
-    nickNameLabel.frame = CGRectMake(profileView.frame.size.width + profileView.frame.origin.x + 5, profileView.frame.origin.y, WIDTH, profileView.frame.size.height +5);
+    nickNameLabel.frame = CGRectMake(profileView.frame.size.width + profileView.frame.origin.x + 10, profileView.frame.origin.y, 180, 20);
     nickNameLabel.text = curComment.nickName;
-    nickNameLabel.textColor = [UIColor greenColor];
-    [nickNameLabel sizeToFit];
+    nickNameLabel.textColor = [HandleTools colorStringToInt:@"0xff8901"];
+    nickNameLabel.font = [UIFont fontWithName:@"Helvetica" size:11];
     [cell.contentView addSubview:nickNameLabel];
+    
     
     UILabel *dateLabel = [[UILabel alloc] init];
     dateLabel.frame = CGRectMake(WIDTH - 100, nickNameLabel.frame.origin.y, 80, nickNameLabel.frame.size.height);
     dateLabel.text = curComment.commentDate;
-    [dateLabel sizeToFit];
+    dateLabel.textAlignment = NSTextAlignmentRight;
+    dateLabel.font = [UIFont fontWithName:@"Helvetica" size:11];
+    dateLabel.textColor = [HandleTools colorStringToInt:@"0xc9c9c9"];
     [cell.contentView addSubview:dateLabel];
     
     
     UITextView *commentTextView = [[UITextView alloc] init];
     commentTextView.editable = NO;
     commentTextView.text = curComment.commentBody;
-    commentTextView.frame = CGRectMake(nickNameLabel.frame.origin.x,nickNameLabel.frame.origin.y+nickNameLabel.frame.size.height+5,WIDTH - nickNameLabel.frame.origin.x,0);
+    
+    commentTextView.frame = CGRectMake(profileView.frame.origin.x,profileView.frame.origin.y+profileView.frame.size.height,WIDTH - nickNameLabel.frame.origin.x,0);
     [commentTextView sizeToFit];
     CGRect rect = commentTextView.frame;
     [cell.contentView addSubview:commentTextView];
@@ -283,8 +304,11 @@ static NSString *CELLID = @"discussCommentCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
 
+
     if ([indexPath section] == 0) {
-        return FirstCellHeight;
+        if ([indexPath row] == 0) {
+            return 75;
+        }
     }
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     return cell.frame.size.height;
