@@ -29,12 +29,13 @@
     segmentedControl.frame = CGRectMake(0 , 0, WIDTH, 50.0);
     segmentedControl.selectedSegmentIndex = 0;//设置默认选择项索引
     segmentedControl.tintColor = [UIColor clearColor];
-    segmentedControl.backgroundColor=[UIColor yellowColor];
+    segmentedControl.backgroundColor=[UIColor whiteColor];
     NSDictionary* selectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
-                                             NSForegroundColorAttributeName: [UIColor redColor]};
+                                             NSForegroundColorAttributeName: [HandleTools colorStringToInt:@"0x00b4ff"]};
     [segmentedControl setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];//设置文字属性
     NSDictionary* unselectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
-                                               NSForegroundColorAttributeName: [UIColor blackColor]};
+                                               NSForegroundColorAttributeName: [HandleTools colorStringToInt:@"0x93bfcc"]};
+    [segmentedControl setTitleTextAttributes:unselectedTextAttributes forState:UIControlStateNormal];
     [segmentedControl setTitleTextAttributes:unselectedTextAttributes forState:UIControlStateNormal];
     [segmentedControl addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];  //添加委托方法
     [self.view addSubview:segmentedControl];
@@ -48,21 +49,32 @@
     [self.view addSubview:viewscroll];
     
     UIView*todayview=[[UIView alloc]initWithFrame:CGRectMake(10, 10, WIDTH-20, 200)];
-    todayview.backgroundColor=[UIColor purpleColor];
-    [viewscroll addSubview:todayview];
+    todayview.backgroundColor=[UIColor clearColor];
+//    [viewscroll addSubview:todayview];
     
-    UITableView* SubtableView=[[UITableView alloc] initWithFrame:CGRectMake(WIDTH+10, 0, WIDTH-20, HEIGHT-segmentedControl.frame.size.height-64) style:UITableViewStyleGrouped];
-    SubtableView.delegate=self;
-    SubtableView.dataSource=self;
-    SubtableView.backgroundView = nil;
-    SubtableView.backgroundColor = [UIColor clearColor];//此处设置tableview的背景色
-    SubtableView.userInteractionEnabled=YES;
-    SubtableView. showsHorizontalScrollIndicator=NO;
-    SubtableView. showsVerticalScrollIndicator=NO;
-    SubtableView.scrollEnabled=YES;
-    SubtableView.separatorColor=self.view.backgroundColor;
-    [viewscroll addSubview:SubtableView];
+    UITableView* todayTaskSubtableView=[[UITableView alloc] initWithFrame:CGRectMake(10, 0, WIDTH-20, HEIGHT-segmentedControl.frame.size.height-64) style:UITableViewStyleGrouped];
+    todayTaskSubtableView.delegate=self;
+    todayTaskSubtableView.dataSource=self;
+    todayTaskSubtableView.backgroundView = nil;
+    todayTaskSubtableView.backgroundColor = [UIColor clearColor];//此处设置tableview的背景色
+    todayTaskSubtableView.userInteractionEnabled=YES;
+    todayTaskSubtableView. showsHorizontalScrollIndicator=NO;
+    todayTaskSubtableView. showsVerticalScrollIndicator=NO;
+    todayTaskSubtableView.scrollEnabled=YES;
+    todayTaskSubtableView.separatorColor=self.view.backgroundColor;
+    [viewscroll addSubview:todayTaskSubtableView];
 
+    UITableView* historyTaskSubtableView=[[UITableView alloc] initWithFrame:CGRectMake(WIDTH + 10, 0, WIDTH-20, HEIGHT-segmentedControl.frame.size.height-64) style:UITableViewStyleGrouped];
+    historyTaskSubtableView.delegate=self;
+    historyTaskSubtableView.dataSource=self;
+    historyTaskSubtableView.backgroundView = nil;
+    historyTaskSubtableView.backgroundColor = [UIColor clearColor];//此处设置tableview的背景色
+    historyTaskSubtableView.userInteractionEnabled=YES;
+    historyTaskSubtableView. showsHorizontalScrollIndicator=NO;
+    historyTaskSubtableView. showsVerticalScrollIndicator=NO;
+    historyTaskSubtableView.scrollEnabled=YES;
+    historyTaskSubtableView.separatorColor=self.view.backgroundColor;
+    [viewscroll addSubview:historyTaskSubtableView];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -126,13 +138,13 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 7;
+    return 2;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return 3;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return 40;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString* titleCellIdentifier = [NSString stringWithFormat:@"cell:%d_%d",indexPath.section,indexPath.row];
@@ -143,9 +155,17 @@
     }else{
         [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     }
-    cell.contentView.backgroundColor=[UIColor whiteColor];
+
     CellChangeSelectedColor;
-        return cell;
+    if ([indexPath row] == 0) {
+        cell.textLabel.text = @"物理作业";
+        cell.textLabel.textColor = [HandleTools colorStringToInt:@"0xef9117"];
+    }
+    else{
+    cell.imageView.image = [UIImage imageNamed:@"unfinished_icon"];
+    cell.textLabel.text = @"第五章课后练习";
+    }
+    return cell;
 }
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
 {

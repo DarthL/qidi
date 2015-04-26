@@ -24,34 +24,46 @@
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:242.0/255 green:242.0/255 blue:239.0/255 alpha:1];
     // Do any additional setup after loading the view.
-    UIButton*sendcode=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
-    sendcode.backgroundColor=[UIColor purpleColor];
-    [sendcode addTarget:self action:@selector(getCode) forControlEvents:UIControlEventTouchUpInside];
-    [sendcode setFont:[UIFont systemFontOfSize:15]];
-    [sendcode setTitle:@"验证码" forState:UIControlStateNormal];
-    telnum=[[UITextField alloc]initWithFrame:CGRectMake(10, 30, WIDTH-20, 50)];
-    telnum.placeholder=@"手机号";
-    telnum.rightViewMode=UITextFieldViewModeAlways;
-    telnum.rightView=sendcode;
+    telnum=[[UITextField alloc]initWithFrame:CGRectMake(10, 20, WIDTH-20, 40)];
+    telnum.layer.cornerRadius = 5.0f;
+    UIImageView *leftViewTEL = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 20, 20)];
+    leftViewTEL.image = [UIImage imageNamed:@"mobile_icon.png"];
+    telnum.leftViewMode = UITextFieldViewModeAlways;
+    telnum.leftView = leftViewTEL;
+    telnum.placeholder=@"请输入11位手机号";
     telnum.backgroundColor=[UIColor whiteColor];
     telnum.delegate=self;
     [self.view addSubview:telnum];
     
-    codenum=[[UITextField alloc]initWithFrame:CGRectMake(10, 81, WIDTH-20, 50)];
-    codenum.placeholder=@"手机验证码";
+    UIButton*sendcode=[[UIButton alloc]initWithFrame:CGRectMake(10, telnum.frame.size.height+telnum.frame.origin.y+20, 100, 40)];
+    sendcode.backgroundColor = [HandleTools colorStringToInt:@"0x00b4ff"];
+    sendcode.layer.cornerRadius = 5.0f;
+    [sendcode addTarget:self action:@selector(getCode) forControlEvents:UIControlEventTouchUpInside];
+    [sendcode setFont:[UIFont systemFontOfSize:15]];
+    [sendcode setTitle:@"验证码" forState:UIControlStateNormal];
+    [self.view addSubview:sendcode];
+    
+    codenum=[[UITextField alloc]initWithFrame:CGRectMake(sendcode.frame.origin.x+sendcode.frame.size.width+10, sendcode.frame.origin.y, WIDTH - 130, 40)];
+    codenum.layer.cornerRadius = 5.0f;
     codenum.backgroundColor=[UIColor whiteColor];
     codenum.delegate=self;
     [self.view addSubview:codenum];
     
-    passwd=[[UITextField alloc]initWithFrame:CGRectMake(10, 132, WIDTH-20, 50)];
-    passwd.placeholder=@"密码";
+    passwd=[[UITextField alloc]initWithFrame:CGRectMake(10, sendcode.frame.size.height+sendcode.frame.origin.y+20, WIDTH-20, 40)];
+    passwd.placeholder=@"6~32位密码";
     passwd.backgroundColor=[UIColor whiteColor];
+    passwd.layer.cornerRadius = 5.0f;
     passwd.delegate=self;
     passwd.secureTextEntry=YES;
+    UIImageView *leftViewPwd = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 20, 20)];
+    leftViewPwd.image = [UIImage imageNamed:@"passport_icon"];
+    passwd.leftViewMode = UITextFieldViewModeAlways;
+    passwd.leftView = leftViewPwd;
     [self.view addSubview:passwd];
 
-    UIButton*regbtn=[[UIButton alloc]initWithFrame:CGRectMake(30, passwd.frame.origin.y+passwd.frame.size.height+10, WIDTH-60, 30)];
-    regbtn.backgroundColor=[UIColor redColor];
+    UIButton*regbtn=[[UIButton alloc]initWithFrame:CGRectMake(10, passwd.frame.origin.y+passwd.frame.size.height+20, WIDTH-20, 40)];
+    regbtn.backgroundColor = [HandleTools colorStringToInt:@"0x00b4ff"];
+    regbtn.layer.cornerRadius = 5.0f;
     [regbtn addTarget:self action:@selector(toRegist) forControlEvents:UIControlEventTouchUpInside];
     [regbtn setTitle:@"注册" forState:UIControlStateNormal];
     [self.view addSubview:regbtn];
