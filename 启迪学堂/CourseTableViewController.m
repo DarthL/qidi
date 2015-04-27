@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "playerlistViewController.h"
 #import "ShowPlayerViewController.h"
+#import "SeriesDetailedViewController.h"
 @interface CourseTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
 
@@ -24,6 +25,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor=[UIColor colorWithRed:242.0/255 green:242.0/255 blue:239.0/255 alpha:1];
     SubtableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
+    SubtableView.tag = CourseTag;
     SubtableView.delegate=self;
     SubtableView.dataSource=self;
     SubtableView.backgroundView = nil;
@@ -40,13 +42,28 @@
 #pragma mark - table delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+
     AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
 //    playerlistViewController*playerview=[[playerlistViewController alloc]init];
 //    playerview.hidesBottomBarWhenPushed=YES;
 //    [delegate.coursenavigation pushViewController:playerview animated:YES];
-    ShowPlayerViewController *showPlayerVC = [[ShowPlayerViewController alloc] init];
-    showPlayerVC.hidesBottomBarWhenPushed = YES;
-    [delegate.coursenavigation pushViewController:showPlayerVC animated:YES];
+
+    if (tableView.tag == CourseTag) {
+        ShowPlayerViewController *showPlayerVC = [[ShowPlayerViewController alloc] init];
+        showPlayerVC.hidesBottomBarWhenPushed = YES;
+        [delegate.coursenavigation pushViewController:showPlayerVC animated:YES];
+    }
+    else if(tableView.tag == FavCourseTag){
+        ShowPlayerViewController *showPlayerVC = [[ShowPlayerViewController alloc] init];
+        showPlayerVC.hidesBottomBarWhenPushed = YES;
+        [delegate.minenavigation pushViewController:showPlayerVC animated:YES];
+    }
+    else if(tableView.tag == FavSeriesTag){
+        SeriesDetailedViewController *seriesVC  = [[SeriesDetailedViewController alloc] init];
+        seriesVC.hidesBottomBarWhenPushed = YES;
+        [delegate.minenavigation pushViewController:seriesVC animated:YES];
+    }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -56,7 +73,7 @@
     return 1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-     return 120;
+     return 100;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString* titleCellIdentifier = [NSString stringWithFormat:@"lwcell:%d_%d",indexPath.section,indexPath.row];
@@ -69,7 +86,7 @@
     }
     cell.contentView.backgroundColor=[UIColor whiteColor];
     CellChangeSelectedColor;
-    UIImageView*imgview=[[UIImageView alloc]initWithFrame:CGRectMake(10,10 , 100, 100)];
+    UIImageView*imgview=[[UIImageView alloc]initWithFrame:CGRectMake(10,10 , 100, 75)];
     //            imgview.backgroundColor=[UIColor grayColor];
     //            [imgview setImage:[UIImage imageNamed:@"文章默认"]];
     
@@ -84,6 +101,26 @@
     title.font=[UIFont systemFontOfSize:20];
     title.text=@"内部测试题";
     [cell.contentView addSubview:title];
+    
+    UIImageView *teacherImage = [[UIImageView alloc] initWithFrame:CGRectMake(title.frame.origin.x, title.frame.origin.y+title.frame.size.height+30, 13, 14)];
+    teacherImage.image = [UIImage imageNamed:@"teacher_icon"];
+    [cell.contentView addSubview:teacherImage];
+    
+    UILabel *teacherNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(teacherImage.frame.origin.x+teacherImage.frame.size.width+5, teacherImage.frame.origin.y, 0, 14)];
+    teacherNameLabel.text = @"EE程老师";
+    [teacherNameLabel sizeToFit];
+    teacherNameLabel.textColor = [HandleTools colorStringToInt:@"0xe3e3e3"];
+    [cell.contentView addSubview:teacherNameLabel];
+    
+    UIImageView *studentImage = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 70, title.frame.origin.y+title.frame.size.height+30, 17, 14)];
+    studentImage.image = [UIImage imageNamed:@"numbers_icon"];
+    [cell.contentView addSubview:studentImage];
+    
+    UILabel *studentNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(studentImage.frame.origin.x+studentImage.frame.size.width+5, studentImage.frame.origin.y, 0, 14)];
+    studentNumLabel.text = @"123";
+    [studentNumLabel sizeToFit];
+    studentNumLabel.textColor = [HandleTools colorStringToInt:@"0xe3e3e3"];
+    [cell.contentView addSubview:studentNumLabel];
     
     return cell;
 }

@@ -14,9 +14,11 @@
 {
     UISegmentedControl*segmentedControl;
     UIScrollView *viewscroll;
-    favSeriesViewController *favSeriesVC;
-    favMicroLessonsViewController *favMicroLessonsVC;
-    
+//    favSeriesViewController *favSeriesVC;
+//    favMicroLessonsViewController *favMicroLessonsVC;
+
+    CourseTableViewController *favSeriesVC;
+    CourseTableViewController *favMicroLessonsVC;
 }
 @end
 
@@ -31,15 +33,15 @@
     //初始化UISegmentedControl
     
     segmentedControl = [[UISegmentedControl alloc]initWithItems:segmentedArray];
-    segmentedControl.frame = CGRectMake(0 , 0, WIDTH, 50.0);
+    segmentedControl.frame = CGRectMake(0 , 0, WIDTH, 40.0);
     segmentedControl.selectedSegmentIndex = 0;//设置默认选择项索引
+    segmentedControl.backgroundColor = [UIColor whiteColor];
     segmentedControl.tintColor = [UIColor clearColor];
-    segmentedControl.backgroundColor=[UIColor yellowColor];
     NSDictionary* selectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
-                                             NSForegroundColorAttributeName: [UIColor redColor]};
+                                             NSForegroundColorAttributeName: [HandleTools colorStringToInt:@"0x00b4ff"]};
     [segmentedControl setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];//设置文字属性
     NSDictionary* unselectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
-                                               NSForegroundColorAttributeName: [UIColor blackColor]};
+                                               NSForegroundColorAttributeName: [HandleTools colorStringToInt:@"0x93bfcc"]};
     [segmentedControl setTitleTextAttributes:unselectedTextAttributes forState:UIControlStateNormal];
     [segmentedControl addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];  //添加委托方法
     [self.view addSubview:segmentedControl];
@@ -54,15 +56,17 @@
 
     
     //???favSeriesViewController *favVC写成临时变量就会报错
-    favSeriesVC = [[favSeriesViewController alloc] init];
+    favSeriesVC = [[CourseTableViewController alloc] init];
     favSeriesVC.view.frame = CGRectMake(0, 0, WIDTH, viewscroll.frame.size.height);
-    favSeriesVC.tableView.frame = CGRectMake(0, 0, WIDTH, viewscroll.frame.size.height);
+    favSeriesVC.SubtableView.frame = CGRectMake(0, 0, WIDTH, viewscroll.frame.size.height);
+    favSeriesVC.SubtableView.tag = FavSeriesTag;
     [viewscroll addSubview:favSeriesVC.view];
 
     
-    favMicroLessonsVC = [[favMicroLessonsViewController alloc]init];
+    favMicroLessonsVC = [[CourseTableViewController alloc]init];
     favMicroLessonsVC.view.frame = CGRectMake(WIDTH,0, WIDTH, viewscroll.frame.size.height);
-    favMicroLessonsVC.tableView.frame = CGRectMake(0,0, WIDTH, viewscroll.frame.size.height);
+    favMicroLessonsVC.SubtableView.frame = CGRectMake(0,0, WIDTH, viewscroll.frame.size.height);
+    favMicroLessonsVC.SubtableView.tag = FavCourseTag;
     [viewscroll addSubview:favMicroLessonsVC.view];
 
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SuperViewController.h"
-@interface favMicroLessonsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-@property(nonatomic,strong) UITableView *tableView;
+#import "CourseTableViewController.h"
+@interface favMicroLessonsViewController : CourseTableViewController//<UITableViewDataSource,UITableViewDelegate>
+//@property(nonatomic,strong) UITableView *tableView;
 @end

@@ -10,6 +10,8 @@
 #import "UIImageView+WebCache.h"
 #import "ShowPlayerViewController.h"
 #import "AppDelegate.h"
+
+
 @interface favMicroLessonsViewController ()
 {
     NSMutableArray *favLessons;
@@ -18,7 +20,19 @@
 @end
 
 @implementation favMicroLessonsViewController
-@synthesize tableView = _tableView;
+//@synthesize tableView = _tableView;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate*delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
+    //    playerlistViewController*playerview=[[playerlistViewController alloc]init];
+    //    playerview.hidesBottomBarWhenPushed=YES;
+    //    [delegate.coursenavigation pushViewController:playerview animated:YES];
+    ShowPlayerViewController *showPlayerVC = [[ShowPlayerViewController alloc] init];
+    showPlayerVC.hidesBottomBarWhenPushed = YES;
+    [delegate.minenavigation pushViewController:showPlayerVC animated:YES];
+    
+}
+/*
 - (id)init{
     
     self = [super init];
@@ -108,5 +122,5 @@
 {
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
-
+*/
 @end

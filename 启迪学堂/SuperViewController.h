@@ -29,6 +29,13 @@
 
 #define WebAddress @"http://qdschool.eternesoft.com/api/"
 
+
+typedef NS_ENUM(NSInteger , TABLETAG){
+    CourseTag,
+    FavSeriesTag,
+    FavCourseTag,
+};
+
 @interface SuperViewController : UIViewController
 @property(nonatomic,strong)NSString*rightbarimg;
 @property(nonatomic,strong)UIButton*rightbarbtn;
