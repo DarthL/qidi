@@ -8,11 +8,15 @@
 
 #import "GroupDetailViewController.h"
 #import "ClassHomeViewController.h"
+#import "classMemberViewController.h"
+#import "ClassRankViewController.h"
 @interface GroupDetailViewController ()
 {
     UISegmentedControl*segmentedControl;
     UIScrollView*viewscroll;
     ClassHomeViewController*classhomeview;
+    classMemberViewController *classMemView;
+    ClassRankViewController *classRankView;
 }
 @end
 
@@ -51,6 +55,13 @@
     classhomeview.view.frame=CGRectMake(0, 0, WIDTH,viewscroll.frame.size.height);
     [viewscroll addSubview:classhomeview.view];
 
+    classMemView = [[classMemberViewController alloc] init];
+    classMemView.view.frame = CGRectMake(WIDTH, 0, WIDTH, viewscroll.frame.size.height);
+    [viewscroll addSubview:classMemView.view];
+
+    classRankView = [[ClassRankViewController alloc] init];
+    classRankView.view.frame = CGRectMake(WIDTH*2, 0, WIDTH, viewscroll.frame.size.height);
+    [viewscroll addSubview:classRankView.view];
 
 }
 -(void)viewWillAppear:(BOOL)animated
