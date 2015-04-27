@@ -21,20 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor=[UIColor colorWithRed:242.0/255 green:242.0/255 blue:239.0/255 alpha:1];
+    self.view.backgroundColor=[UIColor whiteColor];
     NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"班组首页",@"班组成员",@"学员排行榜",nil];
     //初始化UISegmentedControl
     
     segmentedControl = [[UISegmentedControl alloc]initWithItems:segmentedArray];
-    segmentedControl.frame = CGRectMake(0 , 0, WIDTH, 50.0);
+    segmentedControl.frame = CGRectMake(0 , 0, WIDTH, 40.0);
     segmentedControl.selectedSegmentIndex = 0;//设置默认选择项索引
     segmentedControl.tintColor = [UIColor clearColor];
-    segmentedControl.backgroundColor=[UIColor yellowColor];
+    segmentedControl.backgroundColor=[UIColor clearColor];
     NSDictionary* selectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
-                                             NSForegroundColorAttributeName: [UIColor redColor]};
+                                             NSForegroundColorAttributeName: [HandleTools colorStringToInt:@"0x00b4ff"]};
     [segmentedControl setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];//设置文字属性
     NSDictionary* unselectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
-                                               NSForegroundColorAttributeName: [UIColor blackColor]};
+                                               NSForegroundColorAttributeName: [HandleTools colorStringToInt:@"0x93bfcc"]};
     [segmentedControl setTitleTextAttributes:unselectedTextAttributes forState:UIControlStateNormal];
     [segmentedControl addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];  //添加委托方法
     [self.view addSubview:segmentedControl];

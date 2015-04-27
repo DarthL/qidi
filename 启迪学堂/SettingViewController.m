@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor=[UIColor colorWithRed:242.0/255 green:242.0/255 blue:239.0/255 alpha:1];
-    UITableView* SubtableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 20, WIDTH, HEIGHT-64-20) style:UITableViewStyleGrouped];
+    self.view.backgroundColor=[HandleTools colorStringToInt:@"f5f5f5"];
+    UITableView* SubtableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-20) style:UITableViewStyleGrouped];
     SubtableView.delegate=self;
     SubtableView.dataSource=self;
     SubtableView.backgroundView = nil;
@@ -43,6 +43,7 @@
     [self.leftbarbtn setTitle:@"后退" forState:UIControlStateNormal];
     [self.leftbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.leftbarbtn addTarget:self action:@selector(toback) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationtitle setText:@"设置"];
     [super viewWillAppear:animated];
     
 }
@@ -87,12 +88,31 @@
     cell.contentView.backgroundColor=[UIColor whiteColor];
     CellChangeSelectedColor;
     if (indexPath.section==0) {
-    
-    cell.textLabel.text=@"非wifi下视频可以播放";
-    }else if(indexPath.section==1)
+        cell.textLabel.text=@"非wifi下视频可以播放";
+        UISwitch *wifiswitch = [[UISwitch alloc] initWithFrame:CGRectMake(WIDTH - 65, 25, 40, 25)];
+        [cell.contentView addSubview:wifiswitch];
+    }else if(indexPath.section==1){
         cell.textLabel.text=@"版本更新";
-    else
+        
+        UILabel *newVersionLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 15, 40, 15)];
+        newVersionLabel.text = @"New";
+        newVersionLabel.textColor = [UIColor whiteColor];
+        [newVersionLabel sizeToFit];
+        newVersionLabel.layer.cornerRadius = 7.0f;
+        newVersionLabel.layer.masksToBounds = YES;
+        newVersionLabel.backgroundColor = [UIColor redColor];
+        newVersionLabel.layer.cornerRadius = 5.0f;
+        [cell.contentView addSubview:newVersionLabel];
+        
+        UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH -65, 35, 40, 15)];
+        versionLabel.text = @"V1.0";
+        //versionLabel.textColor = [HandleTools colorStringToInt:@"0xf5f5f5"];
+        [cell.contentView addSubview:versionLabel];
+    }
+    else{
         cell.textLabel.text=@"关于启迪学堂";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     return cell;
 }
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section

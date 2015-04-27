@@ -38,6 +38,7 @@
     [self.leftbarbtn setTitle:@"后退" forState:UIControlStateNormal];
     [self.leftbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.leftbarbtn addTarget:self action:@selector(toback) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationtitle setText:@"我的笔记"];
     [super viewWillAppear:animated];
     
 }
@@ -61,13 +62,13 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 7;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 7;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    return 100;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString* titleCellIdentifier = [NSString stringWithFormat:@"cell:%d_%d",indexPath.section,indexPath.row];
@@ -80,6 +81,27 @@
     }
     cell.contentView.backgroundColor=[UIColor whiteColor];
     CellChangeSelectedColor;
+    
+    UILabel *noteTopicLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, WIDTH-80, 15)];
+    noteTopicLabel.textColor = [HandleTools colorStringToInt:@"fc8c06"];
+    noteTopicLabel.text = @"Cocos-2d JS事件处理机制";
+    [cell.contentView addSubview:noteTopicLabel];
+    
+    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH-70, noteTopicLabel.frame.origin.y, 70, 15)];
+    timeLabel.text = @"2014-07-09";
+    timeLabel.font = [UIFont fontWithName:@"Helvetica" size:11];
+    timeLabel.textAlignment = NSTextAlignmentLeft;
+    timeLabel.textColor = [HandleTools colorStringToInt:@"a5a5a5"];
+    [cell.contentView addSubview:timeLabel];
+    
+    UITextView *noteContentTextView =[[UITextView alloc] initWithFrame:CGRectMake(noteTopicLabel.frame.origin.x, noteTopicLabel.frame.origin.y+noteTopicLabel.frame.size.height + 15, WIDTH - 45, 50)];
+    noteContentTextView.text = @"这是我的第一个笔记";
+    noteContentTextView.editable = NO;
+    [cell.contentView addSubview:noteContentTextView];
+    
+    
+    
+    
     return cell;
 }
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section

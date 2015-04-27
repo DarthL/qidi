@@ -28,15 +28,29 @@
     [self.leftbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.leftbarbtn addTarget:self action:@selector(toback) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.rightbarbtn setTitle:@"修改" forState:UIControlStateNormal];
+    [self.rightbarbtn setTitle:@"编辑" forState:UIControlStateNormal];
     [self.rightbarbtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.rightbarbtn addTarget:self action:@selector(towritenote) forControlEvents:UIControlEventTouchUpInside];
     [super viewWillAppear:animated];
     
     UIButton*playerview=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 60)];
     playerview.backgroundColor=[UIColor whiteColor];
+    
+    UILabel *noteTopic = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, WIDTH-30, 20)];
+    noteTopic.text = @"Cocos-2d JS事件处理机制";
+    noteTopic.textColor = [HandleTools colorStringToInt:@"0x00b4ff"];
+    [playerview addSubview:noteTopic];
+    
+    UIImageView *rightImage = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 35, 15, 17, 30)];
+    rightImage.image = [UIImage imageNamed:@"rightarrow_button"];
+    [playerview addSubview:rightImage];
     [playerview addTarget:self action:@selector(toshowplay) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playerview];
+    
+    UITextView *noteContent = [[UITextView alloc] initWithFrame:CGRectMake(0, playerview.frame.origin.y+playerview.frame.size.height + 5, WIDTH, HEIGHT - 64 -30)];
+    noteContent.text = @"这是我的第一个笔记，这是我的第一个笔记";
+    [self.view addSubview:noteContent];
+    
     
 }
 -(void)toback

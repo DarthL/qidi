@@ -50,7 +50,7 @@
     return 1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120;
+    return 90;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString* titleCellIdentifier = [NSString stringWithFormat:@"cell:%d_%d",indexPath.section,indexPath.row];
@@ -63,6 +63,29 @@
     }
     cell.contentView.backgroundColor=[UIColor whiteColor];
     CellChangeSelectedColor;
+    
+    UIImageView *profileImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 20, 50, 50)];
+    profileImageView.image = [UIImage imageNamed:@"profile.jpg"];
+    [cell.contentView addSubview:profileImageView];
+    
+    UILabel *groupNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(profileImageView.frame.origin.x+profileImageView.frame.size.width+20, 20, 200, 20)];
+    groupNameLabel.text = @"微课后院";
+    groupNameLabel.textAlignment = NSTextAlignmentLeft;
+    [cell.contentView addSubview:groupNameLabel];
+    
+    UIImageView *groupNumImage = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH-60, groupNameLabel.frame.origin.y, 16, 14)];
+    groupNumImage.image = [UIImage imageNamed:@"numbers_icon"];
+    [cell.contentView addSubview:groupNumImage];
+    
+    UILabel *groupNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(groupNumImage.frame.origin.x+groupNumImage.frame.size.width+5, groupNumImage.frame.origin.y, 50, 15)];
+    groupNumLabel.text = @"55";
+//    groupNumLabel.textColor = [HandleTools colorStringToInt:@""]
+    [cell.contentView addSubview:groupNumLabel];
+    
+    UILabel *groupInsLabel = [[UILabel alloc] initWithFrame:CGRectMake(groupNameLabel.frame.origin.x, groupNameLabel.frame.origin.y+groupNameLabel.frame.size.height + 10, 220, 20)];
+    groupInsLabel.text = @"此班组为娱乐而生，让我们八一八";
+    [cell.contentView addSubview:groupInsLabel];
+    
     return cell;
 }
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
